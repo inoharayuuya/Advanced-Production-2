@@ -136,7 +136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25dcaf319e9f9046861fa07c9bd5123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  Bullet: {fileID: 43497390934195468}
+  bullet: {fileID: 43497390934195468}
+  tirgetTrans: {fileID: 0}
+  bulletSpeed: 0
+  limitSpeed: 0
   speed: 10
   delayTime: 1

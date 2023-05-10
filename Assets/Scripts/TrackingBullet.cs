@@ -10,7 +10,6 @@ public class TrackingBullet : MonoBehaviour
     [SerializeField] private float limitSpeed;      //’e‚Ì§ŒÀ‘¬“x
     private Rigidbody2D rb;                         //’e‚ÌRigidbody2D
     private Transform bulletTrans;                  //’e‚ÌTransform
-    public float speed = 10f;
     float elapsedTime = 0f; // Œo‰ßŠÔ‚ÌƒJƒEƒ“ƒg•Ï”
     public float delayTime = 1f;   // ’x‰„ŠÔi1•bj
 
