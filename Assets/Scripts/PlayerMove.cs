@@ -20,7 +20,15 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (mousePosition.x < transform.position.x)
+        {
+            transform.rotation = Quaternion.Euler(0f, 180f, 0f); // プレイヤーを左向きにする
+        }
+        if (mousePosition.x >= transform.position.x)
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f); // プレイヤーを右向きにする
+        }
         Vector3 moveDirection = new Vector3(0, 0, 0);
         if (Input.GetKey(KeyCode.A))
         {
