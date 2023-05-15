@@ -1349,7 +1349,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1463672535}
-  - component: {fileID: 1463672534}
+  - component: {fileID: 1463672536}
   m_Layer: 0
   m_Name: HpSliderManager
   m_TagString: Untagged
@@ -1357,22 +1357,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1463672534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463672533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1855c0873d1910040b8c8d18a2aa7edb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 100
-  endTime: 1
-  P1_Slider: {fileID: 1706749730}
-  P2_Slider: {fileID: 1952925362}
 --- !u!4 &1463672535
 Transform:
   m_ObjectHideFlags: 0
@@ -1388,6 +1372,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1463672536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463672533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353585ae634e47f4e86d118aa2bcc2d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p1_hp: 100
+  p2_hp: 100
+  p1_slider: {fileID: 1706749730}
+  p2_slider: {fileID: 1952925362}
 --- !u!1 &1706749729
 GameObject:
   m_ObjectHideFlags: 0
