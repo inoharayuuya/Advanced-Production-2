@@ -22,21 +22,12 @@ public class PanelAndCountDownController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-<<<<<<< HEAD
-    {
-        // 経過時刻を引いていく
-        CountDownTime -= Time.deltaTime;
-
-        // 1.0秒以下になったらカウントダウンを終了し、FIGHTを表示する
-        if (CountDownTime < 0.5F)
-=======
     {
         // 経過時刻を引いていく
         CountDownTime -= Time.deltaTime;
         
         // カウントが0.5以下になるとFIGHTが表示される
-        if(CountDownTime < 0.5F)
->>>>>>> bug-inohara
+        if (CountDownTime < 0.5F)
         {
             TextCountDown.text = String.Format("FIGHT!");
 
@@ -45,22 +36,12 @@ public class PanelAndCountDownController : MonoBehaviour
             {
                 CountDownTime = 0.0F;
                 CountPanel.SetActive(false);
-<<<<<<< HEAD
-                GamePanel.SetActive(true);
             }
         }
-=======
-            }
-        }
->>>>>>> bug-inohara
         else
         {
             // カウントダウンタイムを整形して表示
             TextCountDown.text = String.Format("{0:0}", CountDownTime);
-<<<<<<< HEAD
         }
-=======
-        }
->>>>>>> bug-inohara
     }
 }
