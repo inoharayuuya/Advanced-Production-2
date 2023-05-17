@@ -63,6 +63,7 @@ public class PlayerMove : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.D))
         {
+
             move = new Vector3(speed, 0, 0) * Time.deltaTime;
         }
         if (Input.GetKeyDown(KeyCode.Space) && Mathf.Abs(rb.velocity.y) < 0.001f)
