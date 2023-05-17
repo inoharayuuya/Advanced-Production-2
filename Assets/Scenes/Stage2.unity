@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 382260267}
   rb: {fileID: 382260269}
-  speed: 3
+  speed: 10
   jump: 20
 --- !u!50 &382260269
 Rigidbody2D:
@@ -884,7 +884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1501890118}
   rb: {fileID: 1501890121}
-  speed: 3
+  speed: 10
   jump: 20
 --- !u!1 &1585171599
 GameObject:
