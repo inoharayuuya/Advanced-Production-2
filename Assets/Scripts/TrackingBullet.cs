@@ -38,7 +38,7 @@ public class TrackingBullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.name == "Player2")
+        if (collision.gameObject.CompareTag("Player2"))
         {
             // オブジェクトを削除
             Destroy(bullet);
