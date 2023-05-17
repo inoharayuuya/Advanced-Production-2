@@ -11,10 +11,29 @@ public class PlayerMove : MonoBehaviour
     public float speed;
     public float jump;
     // private bool fripX = true;
+
+    GameObject Tp1;
+    GameObject Tp2;
+
+    // テレポートで移動するとき一旦力を加えない
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Teleport1" || other.gameObject.tag == "Teleport2")
+        {
+            rb.velocity = Vector3.zero;
+        }
+
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<Rigidbody2D>();
+
+
+        Tp1 = GameObject.FindGameObjectWithTag("Teleport1");
+        Tp2 = GameObject.FindGameObjectWithTag("Teleport2");
     }
    
     // Update is called once per frame
