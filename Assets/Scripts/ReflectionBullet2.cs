@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ReflectionBullet : MonoBehaviour
+public class ReflectionBullet2 : MonoBehaviour
 {
     [SerializeField]
     GameObject bullet;
@@ -14,7 +14,7 @@ public class ReflectionBullet : MonoBehaviour
         bulletTransform = transform;
     }
     private void Update()
-    { 
+    {
         elapsedTime += Time.deltaTime; // 経過時間をカウント
 
         if (elapsedTime >= 4)
@@ -24,15 +24,15 @@ public class ReflectionBullet : MonoBehaviour
         Vector2 direction = rb.velocity.normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         bulletTransform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        switch(cnt)
+        switch (cnt)
         {
-                case 0:
+            case 0:
                 GetComponent<Renderer>().material.color = Color.blue;
                 break;
-                case 1:
+            case 1:
                 GetComponent<Renderer>().material.color = Color.yellow;
                 break;
-                case 2:
+            case 2:
                 GetComponent<Renderer>().material.color = Color.red;
                 break;
         }
@@ -50,7 +50,7 @@ public class ReflectionBullet : MonoBehaviour
         {
             Destroy(bullet);
         }
-        if (collision.gameObject.name == "Player2")
+        if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(bullet);
         }
