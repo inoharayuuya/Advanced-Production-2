@@ -19,23 +19,33 @@ public class PlayerMoveTranceform : MonoBehaviour
     // 速度
     private Vector3 velocity = Vector3.zero;
 
+    //タイマー取得
+
+    GameObject Timer;
+    PanelAndCountDownController panelController;
     void Start()
     {
         // キャラクターコントローラーを取得
         controller = GetComponent<CharacterController>();
+        Timer = GameObject.Find("PanelAndCountDownManager");
+        panelController = Timer.GetComponent<PanelAndCountDownController>();
     }
 
     void Update()
     {
-        // 移動
-        float moveX = Input.GetAxis("Horizontal") * moveSpeed;
-        Vector3 move = new Vector3(moveX, 0f, 0f);
-        controller.Move(move * Time.deltaTime);
-
-        // ジャンプ
-        if (Input.GetButtonDown("Jump") && controller.isGrounded)
+        if (panelController.CountDownTime == 0.0F)
         {
-            velocity.y = jumpForce;
+            // 移動
+            float moveX = Input.GetAxis("Horizontal") * moveSpeed;
+             Vector3 move = new Vector3(moveX, 0f, 0f);
+             controller.Move(move * Time.deltaTime);
+
+            // ジャンプ
+             if (Input.GetButtonDown("Jump") && controller.isGrounded)
+             {
+                velocity.y = jumpForce;
+             }
+
         }
 
         // 重力
