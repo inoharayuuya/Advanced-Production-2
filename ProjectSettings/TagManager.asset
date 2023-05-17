@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Player2
+  - Teleport2
+  - Player1
+  - Teleport1
+  - Floor
+  - Ladder
+  - Platform
+  - Teleport3
+  - Teleport4
   layers:
   - Default
   - TransparentFX

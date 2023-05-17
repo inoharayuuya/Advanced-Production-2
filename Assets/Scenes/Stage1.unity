@@ -1121,11 +1121,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6822236786823150829, guid: 281c906202521c9489be4f454356605a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.8852615
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6822236786823150829, guid: 281c906202521c9489be4f454356605a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.4177713
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6822236786823150829, guid: 281c906202521c9489be4f454356605a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1229,7 +1229,7 @@ GameObject:
   - component: {fileID: 546941340}
   - component: {fileID: 546941339}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: st1Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8372,7 +8372,7 @@ GameObject:
   - component: {fileID: 1870576361}
   - component: {fileID: 1870576360}
   m_Layer: 0
-  m_Name: Tilemap_moon
+  m_Name: Tilemap_st1moon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
