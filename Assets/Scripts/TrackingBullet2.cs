@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrackingBullet : MonoBehaviour
+public class TrackingBullet2 : MonoBehaviour
 {
     [SerializeField] GameObject bullet;
     [SerializeField] private Transform tirgetTrans; //追いかける対象のTransform
@@ -42,7 +42,7 @@ public class TrackingBullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.CompareTag("Player2"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             // オブジェクトを削除
             Destroy(bullet);
