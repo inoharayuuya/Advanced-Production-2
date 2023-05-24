@@ -10,18 +10,16 @@ public class HpBerController : MonoBehaviour
     // private
     [SerializeField] Slider p1_slider;
     [SerializeField] Slider p2_slider;
-    [SerializeField] DateTime time;
-    DateTime TimeTmp;
-    bool flg;
-
-    int g_p1_hp,  // ゲーム内で使うプレイヤー1のhp変数
-        g_p2_hp;  // ゲーム内で使うプレイヤー2のhp変数
+    //[SerializeField] DateTime time;
+    GameObject playerClass;
+    PlayerClass player;
+    //DateTime TimeTmp;
+    //bool flg;
     #endregion
 
     #region  パブリック
     // public
-    [SerializeField] public int p1_hp = 100;
-    [SerializeField] public int p2_hp = 100;
+
     #endregion
 
     #region  Init関数
@@ -30,12 +28,15 @@ public class HpBerController : MonoBehaviour
     /// </summary>
     void Init()
     {
-        // プレイヤー変数
-        g_p1_hp = p1_hp;  // プレイヤー1hpの取得
-        g_p2_hp = p2_hp;  // プレイヤー2hpの取得
+        playerClass = GameObject.Find("PlayerClass");
+        player = playerClass.GetComponent<PlayerClass>();
+
+        //// プレイヤー変数
+        //g_p1_hp = player.p1_hp;  // プレイヤー1hpの取得
+        //g_p2_hp = player.p2_hp;  // プレイヤー2hpの取得
 
         // カウントダウンに使うフラグ
-        flg = false;
+        //flg = false;
     }
     #endregion
 
@@ -46,7 +47,7 @@ public class HpBerController : MonoBehaviour
     void GetCoolTime()
     {
         // 現在時刻から0.5秒先を取得
-        time = DateTime.Now.AddSeconds(0.5);
+        //time = DateTime.Now.AddSeconds(0.5);
     }
     #endregion
 
@@ -57,8 +58,8 @@ public class HpBerController : MonoBehaviour
     void SetSliderValue()
     {
         // sliderに現在の値を代入
-        p1_slider.value = p1_hp;
-        p2_slider.value = p2_hp;
+        p1_slider.value = player.g_p1_hp;
+        p2_slider.value = player.g_p2_hp;
     }
     #endregion
 
@@ -66,29 +67,29 @@ public class HpBerController : MonoBehaviour
     /// <summary>
     /// クールタイムの処理
     /// </summary>
-    void CoolTime()
-    {
-        // クールタイムが無ければ
-        if (flg == false)
-        {
-            flg = true;
+    //void CoolTime()
+    //{
+    //    //// クールタイムが無ければ
+    //    //if (flg == false)
+    //    //{
+    //    //    flg = true;
 
-            TimeTmp = time;
+    //    //    TimeTmp = time;
 
-            // プレイヤーのHPが残っている場合
-            if (p1_hp > 0 && p1_hp > 0)
-            {
-                p1_hp -= 10;
-                p2_hp -= 10;
-            }
-        }
+    //    //    // プレイヤーのHPが残っている場合
+    //    //    if (player.p1_hp > 0 && player.p1_hp > 0)
+    //    //    {
+    //    //        p1_hp -= 10;
+    //    //        p2_hp -= 10;
+    //    //    }
+    //    //}
 
-        // クールタイムの時間と比較し、現在時刻の方が大きかったら
-        if (DateTime.Now > TimeTmp)
-        {
-            flg = false;
-        }
-    }
+    //    //// クールタイムの時間と比較し、現在時刻の方が大きかったら
+    //    //if (DateTime.Now > TimeTmp)
+    //    //{
+    //    //    flg = false;
+    //    //}
+    //}
     #endregion
 
     #region  Start関数
@@ -104,13 +105,13 @@ public class HpBerController : MonoBehaviour
     void Update()
     {
         // クールタイムの取得
-        GetCoolTime();
+        //GetCoolTime();
 
         // スライダーに数値をセット
         SetSliderValue();
 
         // クールタイムでする処理
-        CoolTime();
+        //CoolTime();
     }
     #endregion
 }
