@@ -66,7 +66,6 @@ public class Teleport1 : MonoBehaviour
     void Update()
     {
         radian += 0.05f;
-        
         transform.rotation = Quaternion.Euler(0f,0f,radian);
 
         if (DateTime.Now > script_cooltime.cooltimetmp)
