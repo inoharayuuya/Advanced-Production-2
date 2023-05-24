@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ReflectionBullet : MonoBehaviour
 {
+    GameObject playerClass;
+    PlayerClass player;
     [SerializeField]
     GameObject bullet;
     public float cnt = 0;
@@ -12,6 +14,8 @@ public class ReflectionBullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         bulletTransform = transform;
+        playerClass = GameObject.Find("PlayerClass");
+        player = playerClass.GetComponent<PlayerClass>();
     }
     private void Update()
     { 
@@ -52,6 +56,8 @@ public class ReflectionBullet : MonoBehaviour
         }
         if (collision.gameObject.name == "Player2")
         {
+            player.g_p2_hp -= player.p2_attack;
+            Debug.Log(player.g_p2_hp);
             Destroy(bullet);
         }
     }
