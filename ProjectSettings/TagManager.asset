@@ -4,20 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
-  - Wall
-  - Player2
-=======
-  - Player2
-  - Teleport2
   - Player1
-  - Teleport1
-  - Floor
-  - Ladder
-  - Platform
-  - Teleport3
   - Teleport4
->>>>>>> bug-kawahara
+  - Teleport3
+  - Teleport2
+  - Teleport1
+  - Player2
+  - Ladder
+  - Wall
   layers:
   - Default
   - TransparentFX
