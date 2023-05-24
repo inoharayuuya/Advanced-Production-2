@@ -10,7 +10,7 @@ public class PlayerMove : MonoBehaviour
     Rigidbody2D rb;
     public float speed;
     public float jump;
-    public float backspeed;
+    public float backspeed = 5;
     // private bool fripX = true;
     GameObject Tp1;
     GameObject Tp2;
@@ -34,8 +34,8 @@ public class PlayerMove : MonoBehaviour
         GetComponent<Rigidbody2D>();
 
 
-        Tp1 = GameObject.FindGameObjectWithTag("Teleport1");
-        Tp2 = GameObject.FindGameObjectWithTag("Teleport2");
+        //Tp1 = GameObject.FindGameObjectWithTag("Teleport1");
+        //Tp2 = GameObject.FindGameObjectWithTag("Teleport2");
         Timer = GameObject.Find("PanelAndCountDownManager");
         panelController = Timer.GetComponent<PanelAndCountDownController>();
     }
