@@ -9,6 +9,7 @@ public class Shot : MonoBehaviour
     public GameObject bulletPrefab2;//’Ç”ö‚·‚é’e
     public float bulletSpeed = 10f;
     public float offsetDistance = 0.5f;//’e‚ªo‚éˆÊ’u‚Ìİ’è
+
     private DateTime time1;
     private DateTime time2;
     DateTime TimeTmp1;
