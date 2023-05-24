@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 fileFormatVersion: 2
 guid: 44f18dc7de70477498ea19d50e9224f6
 TextScriptImporter:
@@ -5,3 +6,12 @@ TextScriptImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+fileFormatVersion: 2
+guid: 44f18dc7de70477498ea19d50e9224f6
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> bug-saito
