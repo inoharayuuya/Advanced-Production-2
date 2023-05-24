@@ -11,7 +11,8 @@ public class Shot : MonoBehaviour
     public float offsetDistance = 0.5f;//弾が出る位置の設定
     private DateTime time1;
     private DateTime time2;
-    DateTime TimeTmp;
+    DateTime TimeTmp1;
+    DateTime TimeTmp2;
     bool flg1;
     bool flg2;
     //タイマー取得
@@ -45,7 +46,7 @@ public class Shot : MonoBehaviour
                 {
                     flg1 = true;
 
-                    TimeTmp = time1;
+                    TimeTmp1 = time1;
                     Vector2 direction = (mousePosition - (transform.position + transform.up * offsetDistance)).normalized;
                     GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.right * offsetDistance, Quaternion.identity);
                     bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
@@ -57,16 +58,26 @@ public class Shot : MonoBehaviour
                 {
                     flg2 = true;
 
-                    TimeTmp = time2;
+                    TimeTmp2 = time2;
                     Vector2 direction = (mousePosition - (transform.position + transform.up * offsetDistance)).normalized;
                     GameObject bullet = Instantiate(bulletPrefab2, transform.position + transform.right * offsetDistance, Quaternion.identity);
                     bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
                 }
             }
-            if (DateTime.Now > TimeTmp)
+            if (DateTime.Now > TimeTmp1)
             {
-                flg1 = false;
-                flg2 = false;
+                if(flg1 == true)
+                {
+                    flg1= false;
+                }
+
+            }
+            if(DateTime.Now > TimeTmp2 )
+            {
+                if(flg2 == true)
+                {
+                    flg2= false;
+                }
             }
         }
     }

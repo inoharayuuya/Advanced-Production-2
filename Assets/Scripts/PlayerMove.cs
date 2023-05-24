@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour
     Rigidbody2D rb;
     public float speed;
     public float jump;
+    public float backspeed;
     // private bool fripX = true;
     GameObject Tp1;
     GameObject Tp2;
@@ -56,12 +57,31 @@ public class PlayerMove : MonoBehaviour
             if (mousePosition.x < transform.position.x)
             {
                 transform.rotation = Quaternion.Euler(0f, 180f, 0f); // プレイヤーを左向きにする
+                if (Input.GetKey(KeyCode.A))
+                {
+                    move = new Vector3(-speed, 0, 0) * Time.deltaTime;
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+
+                    move = new Vector3(speed - backspeed, 0, 0) * Time.deltaTime;
+                }
             }
             if (mousePosition.x >= transform.position.x)
             {
                 transform.rotation = Quaternion.Euler(0f, 0f, 0f); // プレイヤーを右向きにする
+                if (Input.GetKey(KeyCode.A))
+                {
+                    move = new Vector3(-speed + backspeed, 0, 0) * Time.deltaTime;
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+
+                    move = new Vector3(speed, 0, 0) * Time.deltaTime;
+                }
             }
             Vector3 moveDirection = new Vector3(0, 0, 0);
+            /*************************************
             if (Input.GetKey(KeyCode.A))
             {
                 move = new Vector3(-speed, 0, 0) * Time.deltaTime;
@@ -71,6 +91,7 @@ public class PlayerMove : MonoBehaviour
 
                 move = new Vector3(speed, 0, 0) * Time.deltaTime;
             }
+            **************************************/
             if (Input.GetKeyDown(KeyCode.Space) && Mathf.Abs(rb.velocity.y) < 0.001f)
             {
                 // スペースキーが押され、上下方向の速度がほぼゼロのとき、ジャンプする
