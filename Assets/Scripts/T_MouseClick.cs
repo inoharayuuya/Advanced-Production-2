@@ -15,7 +15,22 @@ public class T_MouseClick : MonoBehaviour
         // マウスの左クリックが押されたときの処理
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            SceneManager.LoadScene("GameScene");
+            int rand = Random.Range(1, 4);
+
+            switch(rand)
+            {
+                case 1:
+                    SceneManager.LoadScene("Stage1");
+                    break;
+
+                case 2:
+                    SceneManager.LoadScene("Stage2");
+                    break;
+
+                case 3:
+                    SceneManager.LoadScene("Stage3");
+                    break;
+            }
         }
     }
     #endregion
