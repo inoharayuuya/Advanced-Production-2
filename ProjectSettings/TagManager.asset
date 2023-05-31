@@ -3,19 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< HEAD
-  tags:
-  - Player1
-  - Teleport4
-  - Teleport3
-  - Teleport2
-  - Teleport1
-  - Player2
-  - Ladder
-  - Wall
-=======
   tags: []
->>>>>>> bug-saito
   layers:
   - Default
   - TransparentFX
