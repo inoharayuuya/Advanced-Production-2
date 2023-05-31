@@ -9,9 +9,13 @@ public class Shot : MonoBehaviour
     public GameObject bulletPrefab2;//追尾する弾
     public float bulletSpeed = 10f;
     public float offsetDistance = 0.5f;//弾が出る位置の設定
-    private DateTime time;
-    DateTime TimeTmp;
-    bool flg;
+
+    private DateTime time1;
+    private DateTime time2;
+    DateTime TimeTmp1;
+    DateTime TimeTmp2;
+    bool flg1;
+    bool flg2;
     //タイマー取得
     GameObject Timer;
     PanelAndCountDownController panelController;
@@ -24,7 +28,8 @@ public class Shot : MonoBehaviour
     void Update()
     {
         // 現在時刻から0.5秒先を取得
-        time = DateTime.Now.AddSeconds(1.0f);
+        time1 = DateTime.Now.AddSeconds(1.0f);
+        time2 = DateTime.Now.AddSeconds(2.0f);
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (panelController.CountDownTime == 0.0F)
         {
@@ -38,11 +43,11 @@ public class Shot : MonoBehaviour
             }
             if (Input.GetMouseButtonDown(0))
             {
-                if (flg == false)
+                if (flg1 == false)
                 {
-                    flg = true;
+                    flg1 = true;
 
-                    TimeTmp = time;
+                    TimeTmp1 = time1;
                     Vector2 direction = (mousePosition - (transform.position + transform.up * offsetDistance)).normalized;
                     GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.right * offsetDistance, Quaternion.identity);
                     bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
@@ -50,19 +55,30 @@ public class Shot : MonoBehaviour
             }
             if (Input.GetMouseButtonDown(1))
             {
-                if (flg == false)
+                if (flg2 == false)
                 {
-                    flg = true;
+                    flg2 = true;
 
-                    TimeTmp = time;
+                    TimeTmp2 = time2;
                     Vector2 direction = (mousePosition - (transform.position + transform.up * offsetDistance)).normalized;
                     GameObject bullet = Instantiate(bulletPrefab2, transform.position + transform.right * offsetDistance, Quaternion.identity);
                     bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
                 }
             }
-            if (DateTime.Now > TimeTmp)
+            if (DateTime.Now > TimeTmp1)
             {
-                flg = false;
+                if(flg1 == true)
+                {
+                    flg1= false;
+                }
+
+            }
+            if(DateTime.Now > TimeTmp2 )
+            {
+                if(flg2 == true)
+                {
+                    flg2= false;
+                }
             }
         }
     }
