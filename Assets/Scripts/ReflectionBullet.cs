@@ -48,7 +48,7 @@ public class ReflectionBullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             cnt++;
-            Debug.Log("a");
+            //Debug.Log("a");
         }
         if (cnt == 3)
         {
