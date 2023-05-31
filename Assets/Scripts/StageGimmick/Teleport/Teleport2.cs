@@ -17,7 +17,7 @@ public class Teleport2 : MonoBehaviour
     {
         
 
-        if (other.gameObject.tag == "Player1" && script_cooltime.cnt == 0)
+        if (other.gameObject.tag == "Player" && script_cooltime.cnt == 0)
         {
             Player1.transform.position = Tp1.transform.position;
             Debug.Log("プレイヤー１、Tp1に触れました");
@@ -48,7 +48,7 @@ public class Teleport2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player1 = GameObject.FindGameObjectWithTag("Player1");
+        Player1 = GameObject.FindGameObjectWithTag("Player");
         Player2 = GameObject.FindGameObjectWithTag("Player2");
         Tp1 = GameObject.FindGameObjectWithTag("Teleport1");
         Tp2 = GameObject.FindGameObjectWithTag("Teleport2");

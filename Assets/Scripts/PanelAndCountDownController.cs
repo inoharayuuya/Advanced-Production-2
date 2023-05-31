@@ -20,6 +20,7 @@ public class PanelAndCountDownController : MonoBehaviour
     [SerializeField] public float GameSetTimer  =  2;
     public TextMeshProUGUI TextCountDown;  // 表示用テキストUI
     public Text TextTimer;                 // 表示用テキストUI
+    public bool GameSetFlg;
     #endregion
 
     #region  Init関数
@@ -34,6 +35,7 @@ public class PanelAndCountDownController : MonoBehaviour
         GameSetPanel.SetActive(false);
         TextTimer.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         TextTimer.text = String.Format("{0:0}", CountTimer);
+        GameSetFlg = false;
     }
     #endregion
 
@@ -111,8 +113,9 @@ public class PanelAndCountDownController : MonoBehaviour
         GameSetTimer -= Time.deltaTime;
         
         // カウントが0になった時
-        if (GameSetTimer < 0.0F)
+        if (GameSetTimer <= 0.0F)
         {
+            GameSetFlg = true;
             GameSetTimer = 0;
         }
     }

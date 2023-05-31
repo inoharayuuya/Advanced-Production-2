@@ -54,9 +54,12 @@ public class ReflectionBullet2 : MonoBehaviour
         {
             Destroy(bullet);
         }
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.name == "Player1")
         {
-            player.g_p1_hp -= player.p1_attack;
+            if(player.g_p1_hp > 0)
+            {
+                player.g_p1_hp -= player.p2_attack;
+            }
             Debug.Log(player.g_p1_hp);
             Destroy(bullet);
         }
