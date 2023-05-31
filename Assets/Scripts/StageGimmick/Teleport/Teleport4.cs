@@ -12,6 +12,8 @@ public class Teleport4 : MonoBehaviour
 
     CoolTime script_cooltime;
 
+    float radian;
+
     // プレイヤーがTp2に触れたらTp1にテレポートする
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -60,6 +62,9 @@ public class Teleport4 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        radian += 0.05f;
+        transform.rotation = Quaternion.Euler(0f, 0f, radian);
+
         if (DateTime.Now > script_cooltime.cooltimetmp)
         {
             script_cooltime.cnt = 0;
