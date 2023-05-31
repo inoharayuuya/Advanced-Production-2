@@ -26,6 +26,8 @@ public class PlayerMove : MonoBehaviour
 
     bool Run = false; //走るアニメーション
     bool Shot = false; //打つアニメーション
+    bool Walk = false; //歩くアニメーション
+    bool Idle = true; //待機アニメーション
     //タイマー取得
     GameObject Timer;
     PanelAndCountDownController panelController;
@@ -71,6 +73,8 @@ public class PlayerMove : MonoBehaviour
         {  
             Run = false;
             Shot= false;
+            Walk= false;
+            Idle= true;
             if (mousePosition.x < transform.position.x)
             {
                 transform.rotation = Quaternion.Euler(0f, 180f, 0f); // プレイヤーを左向きにする
@@ -80,13 +84,16 @@ public class PlayerMove : MonoBehaviour
                     move = new Vector3(-speed, 0, 0) * Time.deltaTime;
                     //animator.Play("Run");
                     Run = true;
+                    Idle = false;
                 }
+                
                 if (Input.GetKey(KeyCode.D))
                 {
 
                     move = new Vector3(speed - backspeed, 0, 0) * Time.deltaTime;
                     //animator.Play("Run");
-                    Run = true;
+                    Walk = true;
+                    Idle = false;
                 }
             }
             if (mousePosition.x >= transform.position.x)
@@ -96,14 +103,16 @@ public class PlayerMove : MonoBehaviour
                 {
                     move = new Vector3(-speed + backspeed, 0, 0) * Time.deltaTime;
                     //animator.Play("Run");
-                    Run = true;
+                    Walk = true;
+                    Idle = false;
                 }
                 if (Input.GetKey(KeyCode.D))
                 {
 
                     move = new Vector3(speed, 0, 0) * Time.deltaTime;
                     //animator.Play("Run");
-                    Run= true;
+                    Run = true;
+                    Idle = false;
                 }
             }
             Vector3 moveDirection = new Vector3(0, 0, 0);
@@ -167,6 +176,8 @@ public class PlayerMove : MonoBehaviour
             
             animator.SetBool("Run", Run);
             animator.SetBool("Shot", Shot);
+            animator.SetBool("Walk", Walk);
+            animator.SetBool("Idle", Idle);
         }
 
     }
