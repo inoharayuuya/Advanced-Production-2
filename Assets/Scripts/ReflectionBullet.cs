@@ -48,7 +48,7 @@ public class ReflectionBullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             cnt++;
-            Debug.Log("a");
+            //Debug.Log("a");
         }
         if (cnt == 3)
         {
@@ -56,7 +56,10 @@ public class ReflectionBullet : MonoBehaviour
         }
         if (collision.gameObject.name == "Player2")
         {
-            player.g_p2_hp -= player.p2_attack;
+            if(player.g_p2_hp > 0)
+            {
+                player.g_p2_hp -= player.p1_attack;
+            }
             Debug.Log(player.g_p2_hp);
             Destroy(bullet);
         }

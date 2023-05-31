@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TrackingBullet2 : MonoBehaviour
 {
+    GameObject playerClass;
+    PlayerClass player;
     [SerializeField] GameObject bullet;
     [SerializeField] private Transform tirgetTrans; //追いかける対象のTransform
     [SerializeField] private float bulletSpeed;  　 //弾の速度
@@ -17,6 +19,8 @@ public class TrackingBullet2 : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         bulletTrans = GetComponent<Transform>();
+        playerClass = GameObject.Find("PlayerClass");
+        player = playerClass.GetComponent<PlayerClass>();
     }
     private void Update()
     {
@@ -44,6 +48,8 @@ public class TrackingBullet2 : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
+            player.g_p1_hp -= player.p1_attack;
+            Debug.Log(player.g_p1_hp);
             // オブジェクトを削除
             Destroy(bullet);
         }

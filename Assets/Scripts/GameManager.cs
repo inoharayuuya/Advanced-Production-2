@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     #region  プライベート
     GameObject Timer;
     PanelAndCountDownController panelController;
+    GameObject playerClass;
+    PlayerClass player;
     #endregion
 
     #region  パブリック
@@ -23,6 +25,8 @@ public class GameManager : MonoBehaviour
     {
         Timer = GameObject.Find("PanelAndCountDownManager");
         panelController = Timer.GetComponent<PanelAndCountDownController>();
+        playerClass = GameObject.Find("PlayerClass");
+        player = playerClass.GetComponent<PlayerClass>();
     }
     #endregion
 
@@ -38,13 +42,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(panelController.CountTimer == 0.0F)
+        // タイマーが0になるか、プレイヤー1,2のHPが0になったら終了
+        if(panelController.CountTimer == 0.0F || player.g_p1_hp <= 0 || player.g_p2_hp <= 0)
         {
             panelController.GameSet();
             Debug.Log("終了");
         }
 
-        if(panelController.GameSetTimer == 0.0F)
+        if(panelController.GameSetFlg == true)
         {
             SceneManager.LoadScene("TitleScene");
         }
