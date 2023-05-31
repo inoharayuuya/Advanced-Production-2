@@ -49,8 +49,9 @@ public class Shot : MonoBehaviour
 
                     TimeTmp1 = time1;
                     Vector2 direction = (mousePosition - (transform.position + transform.up * offsetDistance)).normalized;
+                    Vector2 velocity = direction.normalized * bulletSpeed; // 正規化後に速さを掛ける
                     GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.right * offsetDistance, Quaternion.identity);
-                    bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+                    bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
                 }
             }
             if (Input.GetMouseButtonDown(1))
@@ -61,8 +62,9 @@ public class Shot : MonoBehaviour
 
                     TimeTmp2 = time2;
                     Vector2 direction = (mousePosition - (transform.position + transform.up * offsetDistance)).normalized;
+                    Vector2 velocity = direction.normalized * bulletSpeed; // 正規化後に速さを掛ける
                     GameObject bullet = Instantiate(bulletPrefab2, transform.position + transform.right * offsetDistance, Quaternion.identity);
-                    bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+                    bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
                 }
             }
             if (DateTime.Now > TimeTmp1)

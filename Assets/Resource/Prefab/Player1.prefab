@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f6b20c4e36cc040a983c6cc6ea8cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursor: {fileID: 2800000, guid: dafd1dbbaff1ab549b6022722b5f3fdc, type: 3}
+  cursor: {fileID: 2800000, guid: ed9718bd52a110745aa78f157840a1db, type: 3}
   bulletPrefab: {fileID: 6806464978076283539, guid: 9e49453d2cb5dc44e8a9ead7d4ef648b, type: 3}
   bulletPrefab2: {fileID: 0}
   bulletSpeed: 20
@@ -219,7 +219,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 1153484663, guid: c85bb0fd35c18b44f9eaf5385c213df5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
