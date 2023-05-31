@@ -113,7 +113,7 @@ public class PanelAndCountDownController : MonoBehaviour
         GameSetTimer -= Time.deltaTime;
         
         // ƒJƒEƒ“ƒg‚ª0‚É‚È‚Á‚½Žž
-        if (GameSetTimer < 0.0F)
+        if (GameSetTimer <= 0.0F)
         {
             GameSetFlg = true;
             GameSetTimer = 0;

@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // タイマーが0になるか、プレイヤー1,2のHPが0になったら終了
-        if(panelController.CountTimer == 0.0F || player.g_p1_hp == 0 || player.g_p2_hp == 0)
+        if(panelController.CountTimer == 0.0F || player.g_p1_hp <= 0 || player.g_p2_hp <= 0)
         {
             panelController.GameSet();
             Debug.Log("終了");

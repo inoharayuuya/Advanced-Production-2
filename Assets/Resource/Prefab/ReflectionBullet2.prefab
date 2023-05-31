@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6462591115488384820, guid: 9e49453d2cb5dc44e8a9ead7d4ef648b, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6806464978076283539, guid: 9e49453d2cb5dc44e8a9ead7d4ef648b, type: 3}
       propertyPath: m_Name
       value: ReflectionBullet2
