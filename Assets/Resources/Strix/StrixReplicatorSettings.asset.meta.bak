@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: a9b25921dcc958148a4511b93944d961
+=======
 guid: 3375751ead95ecb4290351de10b4ac0d
+>>>>>>> bug-inohara
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
