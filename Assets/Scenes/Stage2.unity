@@ -8894,7 +8894,7 @@ Tilemap:
       - {fileID: -1714613501666860743, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 7214733389137876252, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -3274377802644897015, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 0, y: -2, z: 0}
@@ -8924,7 +8924,7 @@ Tilemap:
       - {fileID: -1714613501666860743, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 7214733389137876252, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -3274377802644897015, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -8, y: 1, z: 0}
@@ -9493,6 +9493,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5962224344917308701, guid: 4fdc813b51e31d34eb771c731b3cfcf5, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 6592166725031044422, guid: 650967d67cc53dd4987d1e62015d1402, type: 3}
     - target: {fileID: 5962224344917308701, guid: 4fdc813b51e31d34eb771c731b3cfcf5, type: 3}
       propertyPath: bulletPrefab2
       value: 
@@ -10809,6 +10813,7 @@ MonoBehaviour:
   GameSetTimer: 2
   TextCountDown: {fileID: 958338634}
   TextTimer: {fileID: 1033479676}
+  GameSetFlg: 0
 --- !u!4 &2035126617
 Transform:
   m_ObjectHideFlags: 0
