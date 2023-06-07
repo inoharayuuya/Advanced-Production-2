@@ -16,9 +16,12 @@ public class Shot : MonoBehaviour
     DateTime TimeTmp2;
     bool flg1;
     bool flg2;
+    bool Dead;
     //タイマー取得
     GameObject Timer;
     PanelAndCountDownController panelController;
+    GameObject playerClass;
+    PlayerClass playerhp;
 
     // SE
     [SerializeField] AudioSource ReflectionSE;
@@ -29,8 +32,19 @@ public class Shot : MonoBehaviour
         Cursor.SetCursor(cursor, new Vector2(cursor.width / 2, cursor.height / 2), CursorMode.ForceSoftware);
         Timer = GameObject.Find("PanelAndCountDownManager");
         panelController = Timer.GetComponent<PanelAndCountDownController>();
+        playerClass = GameObject.Find("PlayerClass");
+        playerhp = playerClass.GetComponent<PlayerClass>();
+        Dead= false;
     }
     void Update()
+    {
+        if(Dead == false)
+        {
+          Shots();
+        }
+
+    }
+    public void Shots()
     {
         // 現在時刻から0.5秒先を取得
         time1 = DateTime.Now.AddSeconds(1.0f);
@@ -80,18 +94,22 @@ public class Shot : MonoBehaviour
             }
             if (DateTime.Now > TimeTmp1)
             {
-                if(flg1 == true)
+                if (flg1 == true)
                 {
-                    flg1= false;
+                    flg1 = false;
                 }
 
             }
-            if(DateTime.Now > TimeTmp2 )
+            if (DateTime.Now > TimeTmp2)
             {
-                if(flg2 == true)
+                if (flg2 == true)
                 {
-                    flg2= false;
+                    flg2 = false;
                 }
+            }
+            if (playerhp.g_p1_hp == 0 || playerhp.g_p2_hp == 0)
+            {
+                Dead = true;
             }
         }
     }
