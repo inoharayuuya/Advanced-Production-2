@@ -1,10 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    #region パブリック変数
+    GameObject playerClass;
+    PlayerClass playerhp;
     [SerializeField]
     GameObject player; 
     [SerializeField]
@@ -13,24 +17,32 @@ public class PlayerMove : MonoBehaviour
     public float jump;
     public float backspeed = 5;
     // private bool fripX = true;
-    private Animator animator;
+    #endregion
+
+    #region プライベート変数
     GameObject Tp1;
     GameObject Tp2;
-
+    private Animator animator;
     private DateTime time1;
     private DateTime time2;
     DateTime TimeTmp1;
     DateTime TimeTmp2;
+    #endregion
+
+    #region ブール型
     bool flg1;
     bool flg2;
-
     bool Run = false; //走るアニメーション
     bool Shot = false; //打つアニメーション
     bool Walk = false; //歩くアニメーション
     bool Idle = true; //待機アニメーション
+    bool Dead = false; //体力がなくなった時のアニメーション
+    #endregion
     //タイマー取得
     GameObject Timer;
     PanelAndCountDownController panelController;
+
+    #region 当たり判定 
     // テレポートで移動するとき一旦力を加えない
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -40,7 +52,7 @@ public class PlayerMove : MonoBehaviour
         }
 
     }
-
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -52,15 +64,21 @@ public class PlayerMove : MonoBehaviour
         //Tp2 = GameObject.FindGameObjectWithTag("Teleport2");
         Timer = GameObject.Find("PanelAndCountDownManager");
         panelController = Timer.GetComponent<PanelAndCountDownController>();
+        playerClass = GameObject.Find("PlayerClass");
+        playerhp = playerClass.GetComponent<PlayerClass>();
     }
    
     // Update is called once per frame
     void Update()
     {
-        Playermove();
 
+        if(Dead == false)
+        {
+            Playermove();
+        }
     }
 
+    #region プレイヤーの操作
     public void Playermove()
     {
         // 現在時刻から0.5秒先を取得
@@ -75,6 +93,7 @@ public class PlayerMove : MonoBehaviour
             Shot= false;
             Walk= false;
             Idle= true;
+            Dead = false;
             if (mousePosition.x < transform.position.x)
             {
                 transform.rotation = Quaternion.Euler(0f, 180f, 0f); // プレイヤーを左向きにする
@@ -169,6 +188,15 @@ public class PlayerMove : MonoBehaviour
                     flg2 = false;
                 }
             }
+            if (playerhp.g_p1_hp == 0 || playerhp.g_p2_hp == 0) 
+            {
+                Dead = true;
+                Walk = false;
+                Run = false;
+                Shot= false;
+                Idle= false;
+                rb.velocity = Vector3.zero;
+            }
             Vector3 v = new Vector3(move.x, move.y, 0);
             transform.position += v;
             rb.AddForce(moveDirection * speed);   
@@ -178,7 +206,8 @@ public class PlayerMove : MonoBehaviour
             animator.SetBool("Shot", Shot);
             animator.SetBool("Walk", Walk);
             animator.SetBool("Idle", Idle);
+            animator.SetBool("Dead", Dead);
         }
-
+        #endregion
     }
 }
