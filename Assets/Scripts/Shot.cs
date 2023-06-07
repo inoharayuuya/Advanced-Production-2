@@ -19,6 +19,11 @@ public class Shot : MonoBehaviour
     //タイマー取得
     GameObject Timer;
     PanelAndCountDownController panelController;
+
+    // SE
+    [SerializeField] AudioSource ReflectionSE;
+    [SerializeField] AudioSource ArrowSE;
+
     private void Start()
     {
         Cursor.SetCursor(cursor, new Vector2(cursor.width / 2, cursor.height / 2), CursorMode.ForceSoftware);
@@ -45,6 +50,9 @@ public class Shot : MonoBehaviour
             {
                 if (flg1 == false)
                 {
+                    // SEを鳴らす
+                    ReflectionSE.Play();
+
                     flg1 = true;
 
                     TimeTmp1 = time1;
@@ -58,6 +66,9 @@ public class Shot : MonoBehaviour
             {
                 if (flg2 == false)
                 {
+                    // SEを鳴らす
+                    ArrowSE.Play();
+
                     flg2 = true;
 
                     TimeTmp2 = time2;
