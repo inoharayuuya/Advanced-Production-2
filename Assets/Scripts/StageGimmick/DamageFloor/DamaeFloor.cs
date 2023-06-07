@@ -13,7 +13,7 @@ public class DamaeFloor : MonoBehaviour
         // プレイヤー１が触れているとき
         if(other.gameObject.tag == "Player")
         {
-            Debug.Log("プレイヤー１がダメージ床に触れました");
+            Debug.Log("プレイヤー１、ダメージ床に触れました");
             player.g_p1_hp -= 10;
             Debug.Log(player.g_p1_hp);
             //Destroy(other.gameObject);
@@ -22,7 +22,7 @@ public class DamaeFloor : MonoBehaviour
         // プレイヤー２が触れているとき
         if (other.gameObject.tag == "Player2")
         {
-            Debug.Log("プレイヤー２がダメージ床に触れました");
+            Debug.Log("プレイヤー２、ダメージ床に触れました");
             player.g_p2_hp -= 10;
             Debug.Log(player.g_p2_hp);
             //Destroy(other.gameObject);

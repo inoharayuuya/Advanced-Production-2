@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class T_MouseClick : MonoBehaviour
 {
+    GameObject strixConnect;
+    StrixConnectGUI strixConnectGUI;
+
     #region  クリック関数
     /// <summary>
     /// クリック関数
@@ -13,28 +15,35 @@ public class T_MouseClick : MonoBehaviour
     /// </summary>
     public void MouseClick()
     {
-        // マウスの左クリックが押されたときの処理
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        int rand = Random.Range(1, 4);
+
+        switch (rand)
         {
-            int rand = Random.Range(1, 4);
+            case 1:
+                SceneManager.LoadScene("Stage1");
+                break;
 
-            switch(rand)
-            {
-                case 1:
-                    SceneManager.LoadScene("Stage1");
-                    break;
+            case 2:
+                SceneManager.LoadScene("Stage2");
+                break;
 
-                case 2:
-                    SceneManager.LoadScene("Stage2");
-                    break;
-
-                case 3:
-                    SceneManager.LoadScene("Stage3");
-                    break;
-            }
+            case 3:
+                SceneManager.LoadScene("Stage3");
+                break;
         }
     }
+
+    public void MouseClick2()
+    {
+        SceneManager.LoadScene("StrixSettingsScene");
+    }
     #endregion
+
+    private void Start()
+    {
+        strixConnect = GameObject.Find("ClickEvent");
+        strixConnectGUI = strixConnect.GetComponent<StrixConnectGUI>();
+    }
 
     #region  アップデート関数
     /// <summary>
@@ -43,7 +52,13 @@ public class T_MouseClick : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        MouseClick();
+        // マウスの左クリックが押されたときの処理
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            strixConnectGUI.Connect();
+
+            //MouseClick();
+        }
     }
     #endregion
 }

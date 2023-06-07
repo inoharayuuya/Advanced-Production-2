@@ -521,6 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 229809761, guid: f2c2112f638c5b8489d16403d930373b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentInfo: []
 --- !u!4 &121550672
 Transform:
   m_ObjectHideFlags: 1
@@ -2732,6 +2733,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3193130257085998863, guid: 82e41dda1da735a4eb04cf21dbe56612, type: 3}
+      propertyPath: objectType
+      value: 1048582
+      objectReference: {fileID: 0}
     - target: {fileID: 3689394667113019576, guid: 82e41dda1da735a4eb04cf21dbe56612, type: 3}
       propertyPath: bulletPrefab2
       value: 
@@ -5913,7 +5918,7 @@ Tilemap:
       - {fileID: -1714613501666860743, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 7214733389137876252, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -3274377802644897015, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -4, y: -6, z: 0}
@@ -5953,7 +5958,7 @@ Tilemap:
       - {fileID: -1714613501666860743, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 7214733389137876252, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -3274377802644897015, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 15, y: -5, z: 0}
@@ -6043,7 +6048,7 @@ Tilemap:
       - {fileID: -1714613501666860743, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: 7214733389137876252, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
       - {fileID: -3274377802644897015, guid: d4e3ef3f5231f1a4e93bc54d607aac40, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -4, y: 0, z: 0}
@@ -13887,6 +13892,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5610650167682214570, guid: 4fdc813b51e31d34eb771c731b3cfcf5, type: 3}
+      propertyPath: objectType
+      value: 1048581
+      objectReference: {fileID: 0}
     - target: {fileID: 5962224344917308701, guid: 4fdc813b51e31d34eb771c731b3cfcf5, type: 3}
       propertyPath: bulletPrefab2
       value: 
