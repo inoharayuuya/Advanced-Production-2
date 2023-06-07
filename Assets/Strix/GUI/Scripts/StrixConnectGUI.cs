@@ -17,25 +17,25 @@ public class StrixConnectGUI : MonoBehaviour {
 
     void OnEnable()
     {
-        statusText.text = "";
-        connectButton.interactable = true;
+        //statusText.text = "";
+        //connectButton.interactable = true;
     }
 
     public void Connect() {
         LogManager.Instance.Filter = logLevel;
 
         StrixNetwork.instance.applicationId = applicationId;
-        StrixNetwork.instance.playerName = playerNameInputField.text;
+        //StrixNetwork.instance.playerName = playerNameInputField.text;
         StrixNetwork.instance.ConnectMasterServer(host, port, OnConnectCallback, OnConnectFailedCallback);
 
-        statusText.text = "Connecting MasterServer " + host + ":" + port;
+        //statusText.text = "Connecting MasterServer " + host + ":" + port;
 
-        connectButton.interactable = false;
+        //connectButton.interactable = false;
     }
 
     private void OnConnectCallback(StrixNetworkConnectEventArgs args)
     {
-        statusText.text = "Connection established";
+        //statusText.text = "Connection established";
 
         OnConnect.Invoke();
 
@@ -49,7 +49,7 @@ public class StrixConnectGUI : MonoBehaviour {
             error = args.cause.Message;
         }
 
-        statusText.text = "Connect " + host + ":" + port + " failed. " + error;
-        connectButton.interactable = true;
+        //statusText.text = "Connect " + host + ":" + port + " failed. " + error;
+        //connectButton.interactable = true;
     }
 }
