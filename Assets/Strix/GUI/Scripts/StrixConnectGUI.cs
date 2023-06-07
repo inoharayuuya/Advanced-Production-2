@@ -10,9 +10,9 @@ public class StrixConnectGUI : MonoBehaviour {
     public int port = 9122;
     public string applicationId = "00000000-0000-0000-0000-000000000000";
     public Level logLevel = Level.INFO;
-    public InputField playerNameInputField;
-    public Text statusText;
-    public Button connectButton;
+    //public InputField playerNameInputField;
+    //public Text statusText;
+    //public Button connectButton;
     public UnityEvent OnConnect;
 
     void OnEnable()
