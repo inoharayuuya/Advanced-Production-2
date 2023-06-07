@@ -10,6 +10,13 @@ public class ReflectionBullet2 : MonoBehaviour
     float elapsedTime = 0f; // 経過時間のカウント変数
     private Rigidbody2D rb;
     private Transform bulletTransform;
+
+    // 弾が壁に当たった時のSE
+    [SerializeField] AudioSource BulletReflectionSE;
+
+    // 弾がプレイヤーに当たった時のSE
+    [SerializeField] AudioSource DamageSE;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -47,6 +54,9 @@ public class ReflectionBullet2 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
+            // SEを鳴らす
+            BulletReflectionSE.Play();
+
             cnt++;
             Debug.Log("a");
         }
@@ -58,6 +68,9 @@ public class ReflectionBullet2 : MonoBehaviour
         {
             if(player.g_p1_hp > 0)
             {
+                // SEを鳴らす
+                DamageSE.Play();
+
                 player.g_p1_hp -= player.p2_attack;
             }
             Debug.Log(player.g_p1_hp);
