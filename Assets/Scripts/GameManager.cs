@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region  パブリック
-
+    bool GameEndFlg;
     #endregion
 
     #region  Init関数
@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
         panelController = Timer.GetComponent<PanelAndCountDownController>();
         playerClass = GameObject.Find("PlayerClass");
         player = playerClass.GetComponent<PlayerClass>();
+        GameEndFlg = false;
     }
     #endregion
 
@@ -44,6 +45,11 @@ public class GameManager : MonoBehaviour
     {
         // タイマーが0になるか、プレイヤー1,2のHPが0になったら終了
         if(panelController.CountTimer == 0.0F || player.g_p1_hp <= 0 || player.g_p2_hp <= 0)
+        {
+            GameEndFlg = true;
+        }
+
+        if(GameEndFlg == true)
         {
             panelController.GameSet();
             Debug.Log("終了");
