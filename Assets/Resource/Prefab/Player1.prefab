@@ -539,12 +539,12 @@ MonoBehaviour:
   - {fileID: 3689394667873388891}
   - {fileID: 3090978066370296417}
   - {fileID: 1747444567157499467}
-  objectType: 8
+  objectType: 2
   sendRate: 5
   syncDestroy: 1
   networkInstanceId: -1
-  InstantiableBy: 0
-  ConnectionClosedBehaviour: 0
+  InstantiableBy: 1
+  ConnectionClosedBehaviour: 1
 --- !u!114 &3090978066370296417
 MonoBehaviour:
   m_ObjectHideFlags: 0

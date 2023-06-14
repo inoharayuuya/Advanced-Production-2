@@ -402,9 +402,6 @@ MonoBehaviour:
   port: 9122
   applicationId: 834f3e35-8c48-4a8e-b0b2-1e9aa2dd518d
   logLevel: 2
-  playerNameInputField: {fileID: 0}
-  statusText: {fileID: 0}
-  connectButton: {fileID: 0}
   OnConnect:
     m_PersistentCalls:
       m_Calls:

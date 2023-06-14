@@ -1343,7 +1343,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3193130257085998863, guid: 82e41dda1da735a4eb04cf21dbe56612, type: 3}
       propertyPath: objectType
-      value: 1310722
+      value: 1310721
       objectReference: {fileID: 0}
     - target: {fileID: 3689394667113019576, guid: 82e41dda1da735a4eb04cf21dbe56612, type: 3}
       propertyPath: bulletPrefab2
