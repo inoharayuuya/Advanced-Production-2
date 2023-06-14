@@ -15,7 +15,8 @@ public class T_MouseClick : MonoBehaviour
     /// </summary>
     public void MouseClick()
     {
-        int rand = Random.Range(1, 4);
+        //int rand = Random.Range(1, 4);
+        int rand = 1;
 
         switch (rand)
         {

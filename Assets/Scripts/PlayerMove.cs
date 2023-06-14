@@ -8,8 +8,7 @@ using SoftGear.Strix.Unity.Runtime;
 public class PlayerMove : StrixBehaviour
 {
     #region パブリック変数
-    GameObject playerClass;
-    PlayerClass playerhp;
+
     [SerializeField]
     GameObject player; 
     [SerializeField]
@@ -37,12 +36,14 @@ public class PlayerMove : StrixBehaviour
     bool Shot = false; //打つアニメーション
     bool Walk = false; //歩くアニメーション
     bool Idle = true; //待機アニメーション
-    bool Dead = false; //体力がなくなった時のアニメーション
+    public bool Dead = false; //体力がなくなった時のアニメーション
     #endregion
     //タイマー取得
     GameObject Timer;
     PanelAndCountDownController panelController;
-
+    GameObject playerClass;
+    PlayerClass playerhp;
+    Shot shot;
     #region 当たり判定 
     // テレポートで移動するとき一旦力を加えない
     void OnTriggerEnter2D(Collider2D other)
@@ -67,6 +68,7 @@ public class PlayerMove : StrixBehaviour
         panelController = Timer.GetComponent<PanelAndCountDownController>();
         playerClass = GameObject.Find("PlayerClass");
         playerhp = playerClass.GetComponent<PlayerClass>();
+        shot = shot.GetComponent<Shot>();
     }
    
     // Update is called once per frame
