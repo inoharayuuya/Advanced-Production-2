@@ -42,7 +42,8 @@ public class T_MouseClick : MonoBehaviour
 
     private void Start()
     {
-        strixConnect = GameObject.Find("ClickEvent");
+        //strixConnect = GameObject.Find("ClickEvent1");
+        strixConnect = GameObject.Find("ClickEvent2");
         strixConnectGUI = strixConnect.GetComponent<StrixConnectGUI>();
     }
 
