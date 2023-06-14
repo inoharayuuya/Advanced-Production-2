@@ -535,6 +535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strixBehaviours:
+  - {fileID: 3689394667873388891}
   - {fileID: 3090978066370296417}
   - {fileID: 1747444567157499467}
   objectType: 2
