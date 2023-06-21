@@ -68,7 +68,7 @@ public class PlayerMove : StrixBehaviour
         panelController = Timer.GetComponent<PanelAndCountDownController>();
         playerClass = GameObject.Find("PlayerClass");
         playerhp = playerClass.GetComponent<PlayerClass>();
-        shot = shot.GetComponent<Shot>();
+        shot = GetComponent<Shot>();
     }
    
     // Update is called once per frame
