@@ -351,6 +351,9 @@ GameObject:
   - component: {fileID: 3689394667873388892}
   - component: {fileID: 1501890134}
   - component: {fileID: 1501890127}
+  - component: {fileID: 3193130257085998863}
+  - component: {fileID: 3090978066370296417}
+  - component: {fileID: 1747444567157499467}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -464,6 +467,7 @@ MonoBehaviour:
   speed: 10
   jump: 20
   backspeed: 5
+  Dead: 0
 --- !u!114 &3689394667873388892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,3 +523,59 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3193130257085998863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689394667873388886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1308000454, guid: f2c2112f638c5b8489d16403d930373b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strixBehaviours:
+  - {fileID: 3689394667873388891}
+  - {fileID: 3090978066370296417}
+  - {fileID: 1747444567157499467}
+  objectType: 2
+  sendRate: 5
+  syncDestroy: 1
+  networkInstanceId: -1
+  InstantiableBy: 1
+  ConnectionClosedBehaviour: 1
+--- !u!114 &3090978066370296417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689394667873388886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1762331577, guid: f2c2112f638c5b8489d16403d930373b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NearDistance: 0.02
+  MaxSpeed: 10
+  Acceleration: 100
+  Damping: 0
+  SyncPeriodMin: 50
+  SyncPeriodMax: 200
+  PredictionPeriod: 300
+--- !u!114 &1747444567157499467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689394667873388886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -357823647, guid: f2c2112f638c5b8489d16403d930373b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 1501890127}
+  SynchronizeStates: 1
+  ParameterSynchronizationFlags: 01010101

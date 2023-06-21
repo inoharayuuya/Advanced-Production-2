@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using SoftGear.Strix.Unity.Runtime;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : StrixBehaviour
 {
     #region パブリック変数
 
@@ -83,10 +84,14 @@ public class PlayerMove : MonoBehaviour
     #region プレイヤーの操作
     public void Playermove()
     {
+        if(isLocal == false)
+        {
+            return;
+        }
         // 現在時刻から0.5秒先を取得
         time1 = DateTime.Now.AddSeconds(1.0f);
         time2 = DateTime.Now.AddSeconds(2.0f);
-        float x = transform.position.x;
+        float x = transform.localPosition.x;
         Vector2 move = Vector2.zero;
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (panelController.CountDownTime == 0.0F)
@@ -96,9 +101,9 @@ public class PlayerMove : MonoBehaviour
             Walk= false;
             Idle= true;
             Dead = false;
-            if (mousePosition.x < transform.position.x)
+            if (mousePosition.x < transform.localPosition.x)
             {
-                transform.rotation = Quaternion.Euler(0f, 180f, 0f); // プレイヤーを左向きにする
+                transform.localRotation = Quaternion.Euler(0f, 180f, 0f); // プレイヤーを左向きにする
                 if (Input.GetKey(KeyCode.A))
                 {
 
@@ -117,9 +122,9 @@ public class PlayerMove : MonoBehaviour
                     Idle = false;
                 }
             }
-            if (mousePosition.x >= transform.position.x)
+            if (mousePosition.x >= transform.localPosition.x)
             {
-                transform.rotation = Quaternion.Euler(0f, 0f, 0f); // プレイヤーを右向きにする
+                transform.localRotation = Quaternion.Euler(0f, 0f, 0f); // プレイヤーを右向きにする
                 if (Input.GetKey(KeyCode.A))
                 {
                     move = new Vector3(-speed + backspeed, 0, 0) * Time.deltaTime;
@@ -200,7 +205,7 @@ public class PlayerMove : MonoBehaviour
                 rb.velocity = Vector3.zero;
             }
             Vector3 v = new Vector3(move.x, move.y, 0);
-            transform.position += v;
+            transform.localPosition += v;
             rb.AddForce(moveDirection * speed);   
             
             
