@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using SoftGear.Strix.Unity.Runtime;
 
-public class PlayerMove : StrixBehaviour
+public class PlayerMove2 : StrixBehaviour
 {
     #region パブリック変数
 
@@ -88,6 +88,12 @@ public class PlayerMove : StrixBehaviour
         {
             return;
         }
+
+        if (StrixNetwork.instance.isRoomOwner)
+        {
+            return;
+        }
+
         // 現在時刻から0.5秒先を取得
         time1 = DateTime.Now.AddSeconds(1.0f);
         time2 = DateTime.Now.AddSeconds(2.0f);
