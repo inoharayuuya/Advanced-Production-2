@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class T_MouseClick : MonoBehaviour
+public class T_MouseClick2 : MonoBehaviour
 {
     GameObject strixConnect;
     StrixConnectGUI strixConnectGUI;
@@ -42,8 +42,8 @@ public class T_MouseClick : MonoBehaviour
 
     private void Start()
     {
-        strixConnect = GameObject.Find("ClickEvent1");
-        //strixConnect = GameObject.Find("ClickEvent2");
+        //strixConnect = GameObject.Find("ClickEvent1");
+        strixConnect = GameObject.Find("ClickEvent2");
         strixConnectGUI = strixConnect.GetComponent<StrixConnectGUI>();
     }
 
