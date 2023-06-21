@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         {
             StrixNetwork.instance.roomSession.Disconnect();
 
-            SceneManager.LoadScene("TitleScene");
+            SceneManager.LoadScene("StrixSettingsScene");
         }
     }
     #endregion

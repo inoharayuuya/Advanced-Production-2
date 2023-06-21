@@ -5,12 +5,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 using SoftGear.Strix.Unity.Runtime;
 
-public class PlayerMove : StrixBehaviour
+public class PlayerMove1 : StrixBehaviour
 {
     #region パブリック変数
 
     [SerializeField]
-    GameObject player; 
+    GameObject player1;
     [SerializeField]
     Rigidbody2D rb;
     public float speed;
@@ -68,7 +68,7 @@ public class PlayerMove : StrixBehaviour
         panelController = Timer.GetComponent<PanelAndCountDownController>();
         playerClass = GameObject.Find("PlayerClass");
         playerhp = playerClass.GetComponent<PlayerClass>();
-        shot = shot.GetComponent<Shot>();
+        shot = GetComponent<Shot>();
     }
    
     // Update is called once per frame
@@ -88,6 +88,13 @@ public class PlayerMove : StrixBehaviour
         {
             return;
         }
+
+        if (StrixNetwork.instance.isRoomOwner == false)
+        {
+            player1.SetActive(false);
+            return;
+        }
+
         // 現在時刻から0.5秒先を取得
         time1 = DateTime.Now.AddSeconds(1.0f);
         time2 = DateTime.Now.AddSeconds(2.0f);
