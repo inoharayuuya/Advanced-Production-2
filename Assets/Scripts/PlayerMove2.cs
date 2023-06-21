@@ -92,6 +92,7 @@ public class PlayerMove2 : StrixBehaviour
         if (StrixNetwork.instance.isRoomOwner)
         {
             player2.SetActive(false);
+            print("プレイヤー2非表示");
             return;
         }
 
