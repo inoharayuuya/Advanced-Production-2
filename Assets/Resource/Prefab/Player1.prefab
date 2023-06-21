@@ -405,8 +405,9 @@ GameObject:
   - component: {fileID: 3689394667873388888}
   - component: {fileID: 3689394667873388887}
   - component: {fileID: 3689394667873388889}
-  - component: {fileID: 3689394667873388891}
   - component: {fileID: 3689394667873388892}
+  - component: {fileID: 663922457349275265}
+  - component: {fileID: 240456944327789648}
   - component: {fileID: 1501890134}
   - component: {fileID: 1501890127}
   - component: {fileID: 3193130257085998863}
@@ -508,24 +509,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3689394667873388891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3689394667873388886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2ba62f8824ce7f45957be8bec8d5499, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 3689394667873388886}
-  rb: {fileID: 3689394667873388889}
-  speed: 10
-  jump: 20
-  backspeed: 5
-  Dead: 0
 --- !u!114 &3689394667873388892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,6 +528,42 @@ MonoBehaviour:
   offsetDistance: 0.5
   ReflectionSE: {fileID: 0}
   ArrowSE: {fileID: 0}
+--- !u!114 &663922457349275265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689394667873388886}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c3bb87832455f47b9c984f6d84e23f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rb: {fileID: 0}
+  speed: 0
+  jump: 0
+  backspeed: 5
+  Dead: 0
+--- !u!114 &240456944327789648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689394667873388886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ba62f8824ce7f45957be8bec8d5499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3689394667873388886}
+  rb: {fileID: 3689394667873388889}
+  speed: 0
+  jump: 0
+  backspeed: 5
+  Dead: 0
 --- !u!70 &1501890134
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -594,7 +613,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strixBehaviours:
-  - {fileID: 3689394667873388891}
+  - {fileID: 663922457349275265}
+  - {fileID: 240456944327789648}
   - {fileID: 3090978066370296417}
   - {fileID: 1747444567157499467}
   objectType: 13

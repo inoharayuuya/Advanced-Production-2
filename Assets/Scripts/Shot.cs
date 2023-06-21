@@ -46,6 +46,7 @@ public class Shot : MonoBehaviour
     }
     public void Shots()
     {
+        
         // Œ»İ‚©‚ç0.5•bæ‚ğæ“¾
         time1 = DateTime.Now.AddSeconds(1.0f);
         time2 = DateTime.Now.AddSeconds(2.0f);

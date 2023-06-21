@@ -62,10 +62,6 @@ public class GameManager : MonoBehaviour
 
             SceneManager.LoadScene("StrixSettingsScene");
         }
-
-        var uid = StrixNetwork.instance.selfRoomMember;
-
-        Debug.Log("uid: " + uid.GetUid());
     }
     #endregion
 }
