@@ -32,8 +32,8 @@ public class HpBerController : MonoBehaviour
         player = playerClass.GetComponent<PlayerClass>();
 
         //// プレイヤー変数
-        //g_p1_hp = player.p1_hp;  // プレイヤー1hpの取得
-        //g_p2_hp = player.p2_hp;  // プレイヤー2hpの取得
+        //g_p1_hp = player1.p1_hp;  // プレイヤー1hpの取得
+        //g_p2_hp = player1.p2_hp;  // プレイヤー2hpの取得
 
         // カウントダウンに使うフラグ
         //flg = false;
@@ -77,7 +77,7 @@ public class HpBerController : MonoBehaviour
     //    //    TimeTmp = time;
 
     //    //    // プレイヤーのHPが残っている場合
-    //    //    if (player.p1_hp > 0 && player.p1_hp > 0)
+    //    //    if (player1.p1_hp > 0 && player1.p1_hp > 0)
     //    //    {
     //    //        p1_hp -= 10;
     //    //        p2_hp -= 10;

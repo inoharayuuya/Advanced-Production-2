@@ -10,7 +10,7 @@ public class PlayerMove2 : StrixBehaviour
     #region パブリック変数
 
     [SerializeField]
-    GameObject player; 
+    GameObject player2; 
     [SerializeField]
     Rigidbody2D rb;
     public float speed;
@@ -91,7 +91,7 @@ public class PlayerMove2 : StrixBehaviour
 
         if (StrixNetwork.instance.isRoomOwner)
         {
-            player.SetActive(false);
+            player2.SetActive(false);
             return;
         }
 
