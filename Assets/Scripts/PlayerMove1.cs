@@ -91,6 +91,7 @@ public class PlayerMove1 : StrixBehaviour
 
         if (StrixNetwork.instance.isRoomOwner == false)
         {
+            player.SetActive(false);
             return;
         }
 
