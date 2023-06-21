@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using SoftGear.Strix.Unity.Runtime.Event;
 
 public class StrixConnectGUI : MonoBehaviour {
+    //[SerializeField,Header]
     public string host = "127.0.0.1";
     public int port = 9122;
     public string applicationId = "00000000-0000-0000-0000-000000000000";
