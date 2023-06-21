@@ -1,3 +1,4 @@
+using SoftGear.Strix.Unity.Runtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -57,6 +58,8 @@ public class GameManager : MonoBehaviour
 
         if(panelController.GameSetFlg == true)
         {
+            StrixNetwork.instance.roomSession.Disconnect();
+
             SceneManager.LoadScene("TitleScene");
         }
     }

@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using SoftGear.Strix.Unity.Runtime;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : StrixBehaviour
 {
     #region パブリック変数
-    GameObject playerClass;
-    PlayerClass playerhp;
+
     [SerializeField]
     GameObject player; 
     [SerializeField]
@@ -36,12 +36,14 @@ public class PlayerMove : MonoBehaviour
     bool Shot = false; //打つアニメーション
     bool Walk = false; //歩くアニメーション
     bool Idle = true; //待機アニメーション
-    bool Dead = false; //体力がなくなった時のアニメーション
+    public bool Dead = false; //体力がなくなった時のアニメーション
     #endregion
     //タイマー取得
     GameObject Timer;
     PanelAndCountDownController panelController;
-
+    GameObject playerClass;
+    PlayerClass playerhp;
+    Shot shot;
     #region 当たり判定 
     // テレポートで移動するとき一旦力を加えない
     void OnTriggerEnter2D(Collider2D other)
@@ -66,6 +68,7 @@ public class PlayerMove : MonoBehaviour
         panelController = Timer.GetComponent<PanelAndCountDownController>();
         playerClass = GameObject.Find("PlayerClass");
         playerhp = playerClass.GetComponent<PlayerClass>();
+        shot = GetComponent<Shot>();
     }
    
     // Update is called once per frame
@@ -81,10 +84,14 @@ public class PlayerMove : MonoBehaviour
     #region プレイヤーの操作
     public void Playermove()
     {
+        if(isLocal == false)
+        {
+            return;
+        }
         // 現在時刻から0.5秒先を取得
         time1 = DateTime.Now.AddSeconds(1.0f);
         time2 = DateTime.Now.AddSeconds(2.0f);
-        float x = transform.position.x;
+        float x = transform.localPosition.x;
         Vector2 move = Vector2.zero;
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (panelController.CountDownTime == 0.0F)
@@ -94,9 +101,9 @@ public class PlayerMove : MonoBehaviour
             Walk= false;
             Idle= true;
             Dead = false;
-            if (mousePosition.x < transform.position.x)
+            if (mousePosition.x < transform.localPosition.x)
             {
-                transform.rotation = Quaternion.Euler(0f, 180f, 0f); // プレイヤーを左向きにする
+                transform.localRotation = Quaternion.Euler(0f, 180f, 0f); // プレイヤーを左向きにする
                 if (Input.GetKey(KeyCode.A))
                 {
 
@@ -115,9 +122,9 @@ public class PlayerMove : MonoBehaviour
                     Idle = false;
                 }
             }
-            if (mousePosition.x >= transform.position.x)
+            if (mousePosition.x >= transform.localPosition.x)
             {
-                transform.rotation = Quaternion.Euler(0f, 0f, 0f); // プレイヤーを右向きにする
+                transform.localRotation = Quaternion.Euler(0f, 0f, 0f); // プレイヤーを右向きにする
                 if (Input.GetKey(KeyCode.A))
                 {
                     move = new Vector3(-speed + backspeed, 0, 0) * Time.deltaTime;
@@ -198,7 +205,7 @@ public class PlayerMove : MonoBehaviour
                 rb.velocity = Vector3.zero;
             }
             Vector3 v = new Vector3(move.x, move.y, 0);
-            transform.position += v;
+            transform.localPosition += v;
             rb.AddForce(moveDirection * speed);   
             
             

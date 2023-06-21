@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 365671475938137214}
   - component: {fileID: 365671475938137213}
   - component: {fileID: 365671475938137215}
+  - component: {fileID: 6704692336077916390}
   m_Layer: 0
   m_Name: P1
   m_TagString: Player1
@@ -140,3 +141,25 @@ MonoBehaviour:
   rb: {fileID: 365671475938137213}
   speed: 10
   jump: 20
+  backspeed: 5
+  Dead: 0
+--- !u!114 &6704692336077916390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365671475938137202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1308000454, guid: f2c2112f638c5b8489d16403d930373b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strixBehaviours:
+  - {fileID: 365671475938137215}
+  objectType: 6
+  sendRate: 5
+  syncDestroy: 1
+  networkInstanceId: -1
+  InstantiableBy: 1
+  ConnectionClosedBehaviour: 1
