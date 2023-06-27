@@ -1,7 +1,8 @@
+using SoftGear.Strix.Unity.Runtime;
 using System;
 using UnityEngine;
 
-public class Shot : MonoBehaviour
+public class Shot2 : MonoBehaviour
 {
     [SerializeField]
     private Texture2D cursor; //ƒJ[ƒ\ƒ‹
@@ -46,7 +47,11 @@ public class Shot : MonoBehaviour
     }
     public void Shots()
     {
-        
+        if (StrixNetwork.instance.playerName != "Player2")
+        {
+            return;
+        }
+
         // Œ»İ‚©‚ç0.5•bæ‚ğæ“¾
         time1 = DateTime.Now.AddSeconds(1.0f);
         time2 = DateTime.Now.AddSeconds(2.0f);
