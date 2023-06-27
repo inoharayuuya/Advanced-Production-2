@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using SoftGear.Strix.Unity.Runtime;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove1 : StrixBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerMove1 : StrixBehaviour
     GameObject player1;
     [SerializeField]
     Rigidbody2D rb;
+    [SerializeField] GameManager gameManager;
     public float speed;
     public float jump;
     public float backspeed = 5;
@@ -74,8 +76,22 @@ public class PlayerMove1 : StrixBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameManager.GameEndFlg)
+        {
+            if (playerhp.g_p1_hp <= 0)
+            {
+                SceneManager.LoadScene("LoseScene");
+            }
 
-        if(Dead == false)
+            if (playerhp.g_p2_hp <= 0)
+            {
+                SceneManager.LoadScene("WinScene");
+            }
+
+            SceneManager.LoadScene("StrixSettingsScene");
+        }
+
+        if (Dead == false && gameManager.GameEndFlg == false)
         {
             Playermove();
         }

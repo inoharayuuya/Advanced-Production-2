@@ -542,6 +542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 3689394667873388886}
   rb: {fileID: 3689394667873388889}
+  gameManager: {fileID: 7765442462287357660, guid: 925cbc9eb274bc4448ea8e24bec7767f, type: 3}
   speed: 10
   jump: 20
   backspeed: 5

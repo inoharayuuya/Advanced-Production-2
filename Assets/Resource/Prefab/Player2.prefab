@@ -167,6 +167,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3923354388435897893, guid: 82e41dda1da735a4eb04cf21dbe56612, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 7765442462287357660, guid: 925cbc9eb274bc4448ea8e24bec7767f, type: 3}
     - target: {fileID: 4266744500157866639, guid: 82e41dda1da735a4eb04cf21dbe56612, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -347,6 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 0}
   rb: {fileID: 0}
+  gameManager: {fileID: 0}
   speed: 10
   jump: 20
   backspeed: 5
