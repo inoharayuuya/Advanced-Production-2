@@ -3,7 +3,7 @@ using SoftGear.Strix.Unity.Runtime;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(StrixConnectGUI))]
+[CustomEditor(typeof(StrixConnectGUI1))]
 public class StrixConnectGUIInspector : Editor {
     private SerializedProperty hostProperty;
     private SerializedProperty portProperty;

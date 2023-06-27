@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using SoftGear.Strix.Unity.Runtime.Event;
 
-public class StrixConnectGUI : MonoBehaviour {
+public class StrixConnectGUI1 : MonoBehaviour {
     //[SerializeField,Header]
     public string host = "127.0.0.1";
     public int port = 9122;
@@ -25,7 +25,7 @@ public class StrixConnectGUI : MonoBehaviour {
         LogManager.Instance.Filter = logLevel;
 
         StrixNetwork.instance.applicationId = applicationId;
-        StrixNetwork.instance.playerName = "NewPlayer";
+        StrixNetwork.instance.playerName = "Player1";
         StrixNetwork.instance.ConnectMasterServer(host, port, OnConnectCallback, OnConnectFailedCallback);
 
         //statusText.text = "Connecting MasterServer " + host + ":" + port;
