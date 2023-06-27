@@ -43,7 +43,7 @@ public class PlayerMove2 : StrixBehaviour
     PanelAndCountDownController panelController;
     GameObject playerClass;
     PlayerClass playerhp;
-    Shot shot;
+    Shot2 shot;
     #region 当たり判定 
     // テレポートで移動するとき一旦力を加えない
     void OnTriggerEnter2D(Collider2D other)
@@ -68,7 +68,7 @@ public class PlayerMove2 : StrixBehaviour
         panelController = Timer.GetComponent<PanelAndCountDownController>();
         playerClass = GameObject.Find("PlayerClass");
         playerhp = playerClass.GetComponent<PlayerClass>();
-        shot = GetComponent<Shot>();
+        shot = GetComponent<Shot2>();
     }
    
     // Update is called once per frame
@@ -84,17 +84,17 @@ public class PlayerMove2 : StrixBehaviour
     #region プレイヤーの操作
     public void Playermove()
     {
-        if(isLocal == false)
-        {
-            return;
-        }
-
-        if (StrixNetwork.instance.isRoomOwner)
+        if (StrixNetwork.instance.playerName != "Player2")
         {
             player2.SetActive(false);
             print("プレイヤー2非表示");
             return;
         }
+        
+        //if (isLocal == false)
+        //{
+        //    return;
+        //}
 
         // 現在時刻から0.5秒先を取得
         time1 = DateTime.Now.AddSeconds(1.0f);
