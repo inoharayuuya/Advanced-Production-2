@@ -102,7 +102,7 @@ public class PlayerMove1 : StrixBehaviour
     {
         if (StrixNetwork.instance.playerName != "Player1")
         {
-            player1.SetActive(false);
+            //player1.SetActive(false);
             print("プレイヤー1非表示");
             return;
         }

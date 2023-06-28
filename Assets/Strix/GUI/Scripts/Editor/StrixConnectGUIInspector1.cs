@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(StrixConnectGUI1))]
-public class StrixConnectGUIInspector : Editor {
+public class StrixConnectGUIInspector1 : Editor {
     private SerializedProperty hostProperty;
     private SerializedProperty portProperty;
 

@@ -37,7 +37,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193130257085998863, guid: 82e41dda1da735a4eb04cf21dbe56612, type: 3}
       propertyPath: objectType
-      value: 18
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3193130257085998863, guid: 82e41dda1da735a4eb04cf21dbe56612, type: 3}
       propertyPath: strixBehaviours.Array.size
@@ -101,11 +101,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3689394667873388888, guid: 82e41dda1da735a4eb04cf21dbe56612, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.334891
+      value: 5.3159647
       objectReference: {fileID: 0}
     - target: {fileID: 3689394667873388888, guid: 82e41dda1da735a4eb04cf21dbe56612, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.286598
+      value: -7.7870092
       objectReference: {fileID: 0}
     - target: {fileID: 3689394667873388888, guid: 82e41dda1da735a4eb04cf21dbe56612, type: 3}
       propertyPath: m_LocalPosition.z
@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3815928273653494964, guid: 82e41dda1da735a4eb04cf21dbe56612, type: 3}
       propertyPath: objectType
-      value: 14
+      value: 1048587
       objectReference: {fileID: 0}
     - target: {fileID: 3923354388435897893, guid: 82e41dda1da735a4eb04cf21dbe56612, type: 3}
       propertyPath: rb

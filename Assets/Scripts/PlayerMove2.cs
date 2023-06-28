@@ -103,11 +103,11 @@ public class PlayerMove2 : StrixBehaviour
     {
         if (StrixNetwork.instance.playerName != "Player2")
         {
-            player2.SetActive(false);
+            //player2.SetActive(false);
             print("プレイヤー2非表示");
             return;
         }
-        
+
         //if (isLocal == false)
         //{
         //    return;

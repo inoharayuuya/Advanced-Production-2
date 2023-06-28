@@ -864,7 +864,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2025478349}
         m_TargetAssemblyTypeName: T_MouseClick2, Assembly-CSharp
-        m_MethodName: MouseClick2
+        m_MethodName: MouseClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
