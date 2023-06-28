@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region  パブリック
-    bool GameEndFlg;
+    public bool GameEndFlg;
     #endregion
 
     #region  Init関数

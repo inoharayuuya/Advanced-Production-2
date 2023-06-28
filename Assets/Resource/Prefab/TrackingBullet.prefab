@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 43497390934195468}
-  tirgetTrans: {fileID: 0}
+  tirgetTrans: {fileID: 5962224345258837245, guid: 4fdc813b51e31d34eb771c731b3cfcf5, type: 3}
   bulletSpeed: 20
   limitSpeed: 10
   delayTime: 0.5

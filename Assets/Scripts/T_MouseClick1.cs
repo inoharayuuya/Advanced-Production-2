@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class T_MouseClick1 : MonoBehaviour
 {
     GameObject strixConnect;
-    StrixConnectGUI strixConnectGUI;
+    StrixConnectGUI1 strixConnectGUI;
 
     #region  クリック関数
     /// <summary>
@@ -44,7 +44,7 @@ public class T_MouseClick1 : MonoBehaviour
     {
         strixConnect = GameObject.Find("ClickEvent1");
         //strixConnect = GameObject.Find("ClickEvent2");
-        strixConnectGUI = strixConnect.GetComponent<StrixConnectGUI>();
+        strixConnectGUI = strixConnect.GetComponent<StrixConnectGUI1>();
     }
 
     #region  アップデート関数
