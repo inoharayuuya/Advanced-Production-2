@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerClass : MonoBehaviour
+public class PlayerClass : StrixBehaviour
 {
     #region  プライベート
 
