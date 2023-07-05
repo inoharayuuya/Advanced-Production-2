@@ -142,7 +142,7 @@ public class PanelAndCountDownController : StrixBehaviour
         }
         else if (StrixNetwork.instance.room.GetMemberCount() == 1)
         {
-            TextCountDown.text = String.Format("Loading");
+            TextCountDown.text = String.Format("PLEASE WAITING");
         }
     }
     #endregion
