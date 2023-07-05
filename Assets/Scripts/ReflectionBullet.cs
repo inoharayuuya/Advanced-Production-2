@@ -1,7 +1,7 @@
 using SoftGear.Strix.Unity.Runtime;
 using UnityEngine;
 
-public class ReflectionBullet : MonoBehaviour
+public class ReflectionBullet : StrixBehaviour
 {
     GameObject playerClass;
     PlayerClass player;
