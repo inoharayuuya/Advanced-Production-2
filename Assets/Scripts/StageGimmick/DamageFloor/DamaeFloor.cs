@@ -11,7 +11,7 @@ public class DamaeFloor : StrixBehaviour
     // ダメージ床に触れているときにHPを減らす
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Player2")
+        if (other.gameObject.tag == "Player1")
         {
             // プレイヤー１が触れているとき
             if (StrixNetwork.instance.playerName == "Player1")
