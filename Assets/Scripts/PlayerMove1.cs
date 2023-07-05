@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using SoftGear.Strix.Unity.Runtime;
 using UnityEngine.SceneManagement;
+using SoftGear.Strix.Unity.Runtime.Event;
 
 public class PlayerMove1 : StrixBehaviour
 {
@@ -76,7 +77,7 @@ public class PlayerMove1 : StrixBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameManager.GameEndFlg)
+        if (gameManager.GameEndFlg == true)
         {
             if (playerhp.g_p1_hp <= 0)
             {
@@ -98,12 +99,13 @@ public class PlayerMove1 : StrixBehaviour
     }
 
     #region プレイヤーの操作
+    [StrixRpc]
     public void Playermove()
     {
         if (StrixNetwork.instance.playerName != "Player1")
         {
             //player1.SetActive(false);
-            print("プレイヤー1非表示");
+            //print("プレイヤー1非表示");
             return;
         }
 

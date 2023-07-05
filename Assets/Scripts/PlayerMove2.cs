@@ -99,6 +99,7 @@ public class PlayerMove2 : StrixBehaviour
     }
 
     #region ƒvƒŒƒCƒ„[‚Ì‘€ì
+    [StrixRpc]
     public void Playermove()
     {
         if (StrixNetwork.instance.playerName != "Player2")

@@ -45,6 +45,7 @@ public class Shot1 : MonoBehaviour
         }
 
     }
+    [StrixRpc]
     public void Shots()
     {
         if (StrixNetwork.instance.playerName != "Player1")
