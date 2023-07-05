@@ -66,7 +66,7 @@ public class PlayerMove3 : StrixBehaviour
         if (StrixNetwork.instance.playerName != "Player1")
         {
             print("プレイヤーの位置を移動");
-            transform.position = new Vector3(5.3f, 8, 0);
+            transform.position = new Vector3(5.3f, -7.5f, 0);
         }
         GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
