@@ -23,7 +23,7 @@ public class PlayerClass : MonoBehaviour
 
     private void Start()
     {
-        g_p1_hp     = p1_hp;
-        g_p2_hp     = p2_hp;
+        g_p1_hp = p1_hp;
+        g_p2_hp = p2_hp;
     }
 }
