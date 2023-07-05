@@ -22,7 +22,7 @@ public class HpBerController : StrixBehaviour
     // public
 
     #endregion
-
+    
     #region  InitŠÖ”
     /// <summary>
     /// ‰Šú‰»‚ÌŠÖ”
