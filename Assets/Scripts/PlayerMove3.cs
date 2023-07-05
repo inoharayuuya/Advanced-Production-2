@@ -102,12 +102,12 @@ public class PlayerMove3 : StrixBehaviour
     #region プレイヤーの操作
     public void Playermove()
     {
-        if (StrixNetwork.instance.playerName != "Player1")
-        {
-            //player1.SetActive(false);
-            print("プレイヤー1非表示");
-            return;
-        }
+        //if (StrixNetwork.instance.playerName != "Player1")
+        //{
+        //    //player1.SetActive(false);
+        //    print("プレイヤー1非表示");
+        //    return;
+        //}
 
         // 自分の所持しているキャラなら操作ができる
         if (isLocal == false)
