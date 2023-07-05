@@ -4,8 +4,9 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using TMPro;
+using SoftGear.Strix.Unity.Runtime;
 
-public class PanelAndCountDownController : MonoBehaviour
+public class PanelAndCountDownController : StrixBehaviour
 {
     #region  プライベート
     [SerializeField] GameObject CountPanel;
@@ -134,7 +135,14 @@ public class PanelAndCountDownController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CountDownTimer();
+        if (StrixNetwork.instance.room.GetMemberCount() == 2)
+        {
+            CountDownTimer();
+        }
+        else if (StrixNetwork.instance.room.GetMemberCount() == 1)
+        {
+            TextCountDown.text = String.Format("Loading");
+        }
     }
     #endregion
 }

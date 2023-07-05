@@ -427,6 +427,8 @@ GameObject:
   - component: {fileID: 3689394667873388889}
   - component: {fileID: 240456944327789648}
   - component: {fileID: 3923354388435897893}
+  - component: {fileID: -1662755869825604013}
+  - component: {fileID: 4630336545894692787}
   - component: {fileID: 1501890134}
   - component: {fileID: 1501890127}
   - component: {fileID: 3193130257085998863}
@@ -566,6 +568,46 @@ MonoBehaviour:
   jump: 0
   backspeed: 5
   Dead: 0
+--- !u!114 &-1662755869825604013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689394667873388886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2112c1b96c1908241b5c85a944a2635f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 3689394667873388886}
+  rb: {fileID: 3689394667873388889}
+  gameManager: {fileID: 7765442462287357660, guid: 925cbc9eb274bc4448ea8e24bec7767f, type: 3}
+  circle: {fileID: 3689394667113019573}
+  speed: 10
+  jump: 20
+  backspeed: 5
+  Dead: 0
+--- !u!114 &4630336545894692787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689394667873388886}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da2e2775114f3d4ba3bd043c7b7edad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player2: {fileID: 0}
+  rb: {fileID: 0}
+  gameManager: {fileID: 0}
+  circle: {fileID: 0}
+  speed: 0
+  jump: 0
+  backspeed: 5
+  Dead: 0
 --- !u!70 &1501890134
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -617,6 +659,8 @@ MonoBehaviour:
   strixBehaviours:
   - {fileID: 240456944327789648}
   - {fileID: 3923354388435897893}
+  - {fileID: -1662755869825604013}
+  - {fileID: 4630336545894692787}
   - {fileID: 3090978066370296417}
   - {fileID: 1747444567157499467}
   objectType: 8
