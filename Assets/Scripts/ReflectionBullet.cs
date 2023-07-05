@@ -65,7 +65,7 @@ public class ReflectionBullet : MonoBehaviour
         {
             Destroy(bullet);
         }
-        if (StrixNetwork.instance.selfRoomMember.GetName() != StrixNetwork.instance.playerName)
+        if (collision.gameObject.CompareTag("Player"))
         {
             if(StrixNetwork.instance.playerName == "Player1")
             {
