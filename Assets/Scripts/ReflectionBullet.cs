@@ -69,6 +69,7 @@ public class ReflectionBullet : MonoBehaviour
         {
             if(StrixNetwork.instance.playerName == "Player1")
             {
+                print("プレイヤー1に衝突");
                 if (player.g_p1_hp > 0)
                 {
                     // SEを鳴らす
@@ -81,6 +82,7 @@ public class ReflectionBullet : MonoBehaviour
             }
             if (StrixNetwork.instance.playerName == "Player2")
             {
+                print("プレイヤー2に衝突");
                 if (player.g_p2_hp > 0)
                 {
                     // SEを鳴らす
