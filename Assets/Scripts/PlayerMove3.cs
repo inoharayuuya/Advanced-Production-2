@@ -63,6 +63,12 @@ public class PlayerMove3 : StrixBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (StrixNetwork.instance.playerName != "Player1")
+        {
+            print("プレイヤーの位置と向きを変更");
+            transform.position = new Vector3(5.3f, -7.5f, 0);
+            transform.localRotation = Quaternion.Euler(0f, 180f, 0f); // プレイヤーを左向きにする
+        }
         GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
@@ -102,17 +108,11 @@ public class PlayerMove3 : StrixBehaviour
     #region プレイヤーの操作
     public void Playermove()
     {
-        if (StrixNetwork.instance.playerName != "Player1")
+        // 自分の所持しているキャラなら操作ができる
+        if (isLocal == false)
         {
-            //player1.SetActive(false);
-            print("プレイヤー1非表示");
             return;
         }
-
-        //if (isLocal == false)
-        //{
-        //    return;
-        //}
 
         // 現在時刻から0.5秒先を取得
         time1 = DateTime.Now.AddSeconds(1.0f);
