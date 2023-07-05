@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HpBerController : MonoBehaviour
+public class HpBerController : StrixBehaviour
 {
     #region  プライベート
     // private
