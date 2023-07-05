@@ -63,6 +63,11 @@ public class PlayerMove3 : StrixBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (StrixNetwork.instance.playerName != "Player1")
+        {
+            print("プレイヤーの位置を移動");
+            transform.position = new Vector3(5.3f, 8, 0);
+        }
         GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
@@ -102,13 +107,6 @@ public class PlayerMove3 : StrixBehaviour
     #region プレイヤーの操作
     public void Playermove()
     {
-        //if (StrixNetwork.instance.playerName != "Player1")
-        //{
-        //    //player1.SetActive(false);
-        //    print("プレイヤー1非表示");
-        //    return;
-        //}
-
         // 自分の所持しているキャラなら操作ができる
         if (isLocal == false)
         {
