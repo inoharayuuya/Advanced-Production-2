@@ -109,10 +109,11 @@ public class PlayerMove3 : StrixBehaviour
             return;
         }
 
-        //if (isLocal == false)
-        //{
-        //    return;
-        //}
+        // ©•ª‚ÌŠ‚µ‚Ä‚¢‚éƒLƒƒƒ‰‚È‚ç‘€ì‚ª‚Å‚«‚é
+        if (isLocal == false)
+        {
+            return;
+        }
 
         // Œ»İ‚©‚ç0.5•bæ‚ğæ“¾
         time1 = DateTime.Now.AddSeconds(1.0f);
