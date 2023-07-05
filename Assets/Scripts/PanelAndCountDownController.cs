@@ -133,7 +133,6 @@ public class PanelAndCountDownController : StrixBehaviour
 
     #region  アップデート関数
     // Update is called once per frame
-    [StrixRpc]
     void Update()
     {
         if (StrixNetwork.instance.room.GetMemberCount() == 2)
