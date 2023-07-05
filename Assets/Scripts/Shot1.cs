@@ -39,7 +39,7 @@ public class Shot1 : StrixBehaviour
     }
     void Update()
     {
-        if(Dead == false && StrixNetwork.instance.selfRoomMember.GetName() == "Player1")
+        if(Dead == false)
         {
           Shots();
         }
@@ -47,7 +47,7 @@ public class Shot1 : StrixBehaviour
     [StrixRpc]
     public void Shots()
     {
-        if (StrixNetwork.instance.playerName != "Player1")
+        if (isLocal == false)
         {
             return;
         }

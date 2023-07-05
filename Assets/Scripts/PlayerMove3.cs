@@ -65,8 +65,9 @@ public class PlayerMove3 : StrixBehaviour
     {
         if (StrixNetwork.instance.playerName != "Player1")
         {
-            print("プレイヤーの位置を移動");
+            print("プレイヤーの位置と向きを変更");
             transform.position = new Vector3(5.3f, -7.5f, 0);
+            transform.localRotation = Quaternion.Euler(0f, 180f, 0f); // プレイヤーを左向きにする
         }
         GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();

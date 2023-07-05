@@ -65,17 +65,32 @@ public class ReflectionBullet : MonoBehaviour
         {
             Destroy(bullet);
         }
-        if (collision.gameObject.name == "Player2" && StrixNetwork.instance.selfRoomMember.GetName() == "Player2")
+        if (StrixNetwork.instance.selfRoomMember.GetName() != StrixNetwork.instance.playerName)
         {
-            if(player.g_p2_hp > 0)
+            if(StrixNetwork.instance.playerName == "Player1")
             {
-                // SE‚ð–Â‚ç‚·
-                DamageSE.Play();
+                if (player.g_p1_hp > 0)
+                {
+                    // SE‚ð–Â‚ç‚·
+                    DamageSE.Play();
 
-                player.g_p2_hp -= player.p1_attack;
+                    player.g_p1_hp -= player.p2_attack;
+                }
+                Debug.Log(player.g_p1_hp);
+                Destroy(bullet);
             }
-            Debug.Log(player.g_p2_hp);
-            Destroy(bullet);
+            if (StrixNetwork.instance.playerName == "Player2")
+            {
+                if (player.g_p2_hp > 0)
+                {
+                    // SE‚ð–Â‚ç‚·
+                    DamageSE.Play();
+
+                    player.g_p2_hp -= player.p1_attack;
+                }
+                Debug.Log(player.g_p2_hp);
+                Destroy(bullet);
+            }
         }
     }
 }
