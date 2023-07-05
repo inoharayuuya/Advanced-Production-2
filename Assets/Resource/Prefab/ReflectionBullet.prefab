@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1812769368208437456}
   - component: {fileID: 540252618060160301}
   - component: {fileID: 5967143599269071513}
+  - component: {fileID: 8926668080699263411}
   - component: {fileID: 1668828645049850865}
   m_Layer: 0
   m_Name: ReflectionBullet
@@ -349,6 +350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strixBehaviours:
+  - {fileID: 8926668080699263411}
   - {fileID: 1668828645049850865}
   objectType: 5
   sendRate: 5
@@ -356,6 +358,21 @@ MonoBehaviour:
   networkInstanceId: -1
   InstantiableBy: 1
   ConnectionClosedBehaviour: 1
+--- !u!114 &8926668080699263411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6806464978076283539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -357823647, guid: f2c2112f638c5b8489d16403d930373b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 0}
+  SynchronizeStates: 1
+  ParameterSynchronizationFlags: 
 --- !u!114 &1668828645049850865
 MonoBehaviour:
   m_ObjectHideFlags: 0
