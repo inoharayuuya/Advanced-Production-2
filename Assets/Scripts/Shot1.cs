@@ -39,7 +39,7 @@ public class Shot1 : MonoBehaviour
     }
     void Update()
     {
-        if(Dead == false)
+        if(Dead == false && StrixNetwork.instance.selfRoomMember.GetName() == "Player1")
         {
           Shots();
         }
