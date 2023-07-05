@@ -39,7 +39,7 @@ public class StrixConnectGUI1 : MonoBehaviour {
 
         OnConnect.Invoke();
 
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
     private void OnConnectFailedCallback(StrixNetworkConnectFailedEventArgs args) {

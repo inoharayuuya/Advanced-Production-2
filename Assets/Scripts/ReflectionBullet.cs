@@ -1,3 +1,4 @@
+using SoftGear.Strix.Unity.Runtime;
 using UnityEngine;
 
 public class ReflectionBullet : MonoBehaviour
@@ -64,9 +65,8 @@ public class ReflectionBullet : MonoBehaviour
         {
             Destroy(bullet);
         }
-        if (collision.gameObject.name == "Player2")
+        if (collision.gameObject.name == "Player2" && StrixNetwork.instance.selfRoomMember.GetName() == "Player2")
         {
-            
             if(player.g_p2_hp > 0)
             {
                 // SE‚ð–Â‚ç‚·

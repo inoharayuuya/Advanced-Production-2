@@ -6,15 +6,17 @@ using UnityEngine;
 using SoftGear.Strix.Unity.Runtime;
 using UnityEngine.SceneManagement;
 
-public class PlayerMove2 : StrixBehaviour
+public class PlayerMove4 : StrixBehaviour
 {
     #region パブリック変数
 
     [SerializeField]
-    GameObject player2; 
+    GameObject player2;
     [SerializeField]
     Rigidbody2D rb;
     [SerializeField] GameManager gameManager;
+    [SerializeField]
+    GameObject circle;
     public float speed;
     public float jump;
     public float backspeed = 5;
@@ -72,12 +74,12 @@ public class PlayerMove2 : StrixBehaviour
         playerhp = playerClass.GetComponent<PlayerClass>();
         shot = GetComponent<Shot2>();
     }
-   
+
     // Update is called once per frame
     void Update()
     {
 
-        if(Dead == false)
+        if (Dead == false)
         {
             Playermove();
         }
@@ -99,7 +101,6 @@ public class PlayerMove2 : StrixBehaviour
     }
 
     #region プレイヤーの操作
-    [StrixRpc]
     public void Playermove()
     {
         if (StrixNetwork.instance.playerName != "Player2")
@@ -121,46 +122,49 @@ public class PlayerMove2 : StrixBehaviour
         Vector2 move = Vector2.zero;
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (panelController.CountDownTime == 0.0F)
-        {  
+        {
             Run = false;
-            Shot= false;
-            Walk= false;
-            Idle= true;
+            Shot = false;
+            Walk = false;
+            Idle = true;
             Dead = false;
             if (mousePosition.x < transform.localPosition.x)
             {
-                transform.localRotation = Quaternion.Euler(0f, 180f, 0f); // プレイヤーを左向きにする
+                circle.transform.position = new Vector3(transform.position.x - 0.5f, transform.position.y, 0);
+                //transform.localRotation = Quaternion.Euler(0f, 180f, 0f); // プレイヤーを左向きにする
                 if (Input.GetKey(KeyCode.A))
                 {
-
+                    transform.localRotation = Quaternion.Euler(0f, 180f, 0f); // プレイヤーを左向きにする
                     move = new Vector3(-speed, 0, 0) * Time.deltaTime;
                     //animator.Play("Run");
                     Run = true;
                     Idle = false;
                 }
-                
+
                 if (Input.GetKey(KeyCode.D))
                 {
-
-                    move = new Vector3(speed - backspeed, 0, 0) * Time.deltaTime;
+                    transform.localRotation = Quaternion.Euler(0f, 0f, 0f); // プレイヤーを右向きにする
+                    move = new Vector3(speed, 0, 0) * Time.deltaTime;
                     //animator.Play("Run");
-                    Walk = true;
+                    Run = true;
                     Idle = false;
                 }
             }
             if (mousePosition.x >= transform.localPosition.x)
             {
-                transform.localRotation = Quaternion.Euler(0f, 0f, 0f); // プレイヤーを右向きにする
+                circle.transform.position = new Vector3(transform.position.x + 0.5f, transform.position.y, 0);
+                //transform.localRotation = Quaternion.Euler(0f, 0f, 0f); // プレイヤーを右向きにする
                 if (Input.GetKey(KeyCode.A))
                 {
-                    move = new Vector3(-speed + backspeed, 0, 0) * Time.deltaTime;
+                    transform.localRotation = Quaternion.Euler(0f, 180f, 0f); // プレイヤーを左向きにする
+                    move = new Vector3(-speed, 0, 0) * Time.deltaTime;
                     //animator.Play("Run");
-                    Walk = true;
+                    Run = true;
                     Idle = false;
                 }
                 if (Input.GetKey(KeyCode.D))
                 {
-
+                    transform.localRotation = Quaternion.Euler(0f, 0f, 0f); // プレイヤーを右向きにする
                     move = new Vector3(speed, 0, 0) * Time.deltaTime;
                     //animator.Play("Run");
                     Run = true;
@@ -186,6 +190,14 @@ public class PlayerMove2 : StrixBehaviour
             }
             if (Input.GetMouseButtonDown(0))
             {
+                if (mousePosition.x < transform.localPosition.x)
+                {
+                    transform.localRotation = Quaternion.Euler(0f, 180f, 0f); // プレイヤーを左向きにする
+                }
+                if (mousePosition.x >= transform.localPosition.x)
+                {
+                    transform.localRotation = Quaternion.Euler(0f, 0f, 0f); // プレイヤーを右向きにする
+                }
                 if (flg1 == false)
                 {
                     flg1 = true;
@@ -197,6 +209,14 @@ public class PlayerMove2 : StrixBehaviour
             }
             if (Input.GetMouseButtonDown(1))
             {
+                if (mousePosition.x < transform.localPosition.x)
+                {
+                    transform.localRotation = Quaternion.Euler(0f, 180f, 0f); // プレイヤーを左向きにする
+                }
+                if (mousePosition.x >= transform.localPosition.x)
+                {
+                    transform.localRotation = Quaternion.Euler(0f, 0f, 0f); // プレイヤーを右向きにする
+                }
                 if (flg2 == false)
                 {
                     flg2 = true;
@@ -221,20 +241,20 @@ public class PlayerMove2 : StrixBehaviour
                     flg2 = false;
                 }
             }
-            if (playerhp.g_p1_hp == 0 || playerhp.g_p2_hp == 0) 
+            if (playerhp.g_p1_hp == 0 || playerhp.g_p2_hp == 0)
             {
                 Dead = true;
                 Walk = false;
                 Run = false;
-                Shot= false;
-                Idle= false;
+                Shot = false;
+                Idle = false;
                 rb.velocity = Vector3.zero;
             }
             Vector3 v = new Vector3(move.x, move.y, 0);
             transform.localPosition += v;
-            rb.AddForce(moveDirection * speed);   
-            
-            
+            rb.AddForce(moveDirection * speed);
+
+
             animator.SetBool("Run", Run);
             animator.SetBool("Shot", Shot);
             animator.SetBool("Walk", Walk);
