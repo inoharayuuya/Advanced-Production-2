@@ -71,6 +71,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrackingBullet2
       objectReference: {fileID: 0}
+    - target: {fileID: 6136586429969432733, guid: f216ad7235a3b6d4f994519a3f64e5e6, type: 3}
+      propertyPath: objectType
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136586429969432733, guid: f216ad7235a3b6d4f994519a3f64e5e6, type: 3}
+      propertyPath: strixBehaviours.Array.data[0]
+      value: 
+      objectReference: {fileID: 6937744308642949739}
     m_RemovedComponents:
     - {fileID: 43497390934195467, guid: f216ad7235a3b6d4f994519a3f64e5e6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f216ad7235a3b6d4f994519a3f64e5e6, type: 3}

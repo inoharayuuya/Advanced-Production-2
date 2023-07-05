@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SoftGear.Strix.Unity.Runtime;
 
-public class TrackingBullet2 : MonoBehaviour
+public class TrackingBullet2 : StrixBehaviour
 {
     GameObject playerClass;
     PlayerClass player;

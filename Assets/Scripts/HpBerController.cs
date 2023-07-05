@@ -1,15 +1,16 @@
+using SoftGear.Strix.Unity.Runtime;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HpBerController : MonoBehaviour
+public class HpBerController : StrixBehaviour
 {
     #region  プライベート
     // private
-    [SerializeField] Slider p1_slider;
-    [SerializeField] Slider p2_slider;
+    [StrixSyncField] public Slider p1_slider;
+    [StrixSyncField] public Slider p2_slider;
     //[SerializeField] DateTime time;
     GameObject playerClass;
     PlayerClass player;

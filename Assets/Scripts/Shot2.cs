@@ -2,7 +2,7 @@ using SoftGear.Strix.Unity.Runtime;
 using System;
 using UnityEngine;
 
-public class Shot2 : MonoBehaviour
+public class Shot2 : StrixBehaviour
 {
     [SerializeField]
     private Texture2D cursor; //ÉJÅ[É\Éã

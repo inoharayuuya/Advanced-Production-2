@@ -2,7 +2,7 @@ using SoftGear.Strix.Unity.Runtime;
 using System;
 using UnityEngine;
 
-public class Shot1 : MonoBehaviour
+public class Shot1 : StrixBehaviour
 {
     [SerializeField]
     private Texture2D cursor; //ÉJÅ[É\Éã
@@ -43,7 +43,6 @@ public class Shot1 : MonoBehaviour
         {
           Shots();
         }
-
     }
     [StrixRpc]
     public void Shots()
