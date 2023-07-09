@@ -80,19 +80,19 @@ public class ReflectionBullet2 : MonoBehaviour
                 Debug.Log(player.g_p1_hp);
                 Destroy(bullet);
             }
-            if (StrixNetwork.instance.playerName == "Player2")
-            {
-                print("プレイヤー2に衝突");
-                if (player.g_p2_hp > 0)
-                {
-                    // SEを鳴らす
-                    DamageSE.Play();
+            //if (StrixNetwork.instance.playerName == "Player2")
+            //{
+            //    print("プレイヤー2に衝突");
+            //    if (player.g_p2_hp > 0)
+            //    {
+            //        // SEを鳴らす
+            //        DamageSE.Play();
 
-                    player.g_p2_hp -= player.p1_attack;
-                }
-                Debug.Log(player.g_p2_hp);
-                Destroy(bullet);
-            }
+            //        player.g_p2_hp -= player.p1_attack;
+            //    }
+            //    Debug.Log(player.g_p2_hp);
+            //    Destroy(bullet);
+            //}
         }
     }
 }
