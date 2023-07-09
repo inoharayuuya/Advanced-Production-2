@@ -72,6 +72,7 @@ public class Shot1 : StrixBehaviour
             {
                 if (flg1 == false && StrixNetwork.instance.playerName == "Player1")
                 {
+                    print("Player1‚ª’e‚ð”­ŽË‚µ‚½");
                     // SE‚ð–Â‚ç‚·
                     ReflectionSE.Play();
 
@@ -86,6 +87,7 @@ public class Shot1 : StrixBehaviour
 
                 if (flg1 == false && StrixNetwork.instance.playerName == "Player2")
                 {
+                    print("Player2‚ª’e‚ð”­ŽË‚µ‚½");
                     // SE‚ð–Â‚ç‚·
                     ReflectionSE.Play();
 
@@ -102,6 +104,7 @@ public class Shot1 : StrixBehaviour
             {
                 if (flg2 == false && StrixNetwork.instance.playerName == "Player1")
                 {
+                    print("Player1‚ª’e‚ð”­ŽË‚µ‚½");
                     // SE‚ð–Â‚ç‚·
                     ArrowSE.Play();
 
@@ -116,6 +119,7 @@ public class Shot1 : StrixBehaviour
 
                 if (flg2 == false && StrixNetwork.instance.playerName == "Player2")
                 {
+                    print("Player2‚ª’e‚ð”­ŽË‚µ‚½");
                     // SE‚ð–Â‚ç‚·
                     ArrowSE.Play();
 
