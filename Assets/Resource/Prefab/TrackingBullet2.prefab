@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6136586429969432733, guid: f216ad7235a3b6d4f994519a3f64e5e6, type: 3}
       propertyPath: objectType
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6136586429969432733, guid: f216ad7235a3b6d4f994519a3f64e5e6, type: 3}
       propertyPath: strixBehaviours.Array.data[0]

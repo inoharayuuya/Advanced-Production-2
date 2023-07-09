@@ -84,12 +84,13 @@ public class Shot1 : StrixBehaviour
                     if (StrixNetwork.instance.playerName == "Player1")
                     {
                         bullet = Instantiate(ReflectionBulletPrefab, transform.position + transform.right * offsetDistance, Quaternion.identity);
+                        bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
                     }
-                    else
+                    if (StrixNetwork.instance.playerName == "Player2")
                     {
                         bullet = Instantiate(ReflectionBulletPrefab2, transform.position + transform.right * offsetDistance, Quaternion.identity);
+                        bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
                     }
-                    bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
                 }
             }
             if (Input.GetMouseButtonDown(1))
@@ -108,12 +109,13 @@ public class Shot1 : StrixBehaviour
                     if (StrixNetwork.instance.playerName == "Player1")
                     {
                         bullet = Instantiate(TrackingBulletPrefab, transform.position + transform.right * offsetDistance, Quaternion.identity);
+                        bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
                     }
-                    else
+                    if (StrixNetwork.instance.playerName == "Player2")
                     {
                         bullet = Instantiate(TrackingBulletPrefab2, transform.position + transform.right * offsetDistance, Quaternion.identity);
+                        bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
                     }
-                    bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
                 }
             }
             if (DateTime.Now > TimeTmp1)
