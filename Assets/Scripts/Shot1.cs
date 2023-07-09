@@ -6,8 +6,10 @@ public class Shot1 : StrixBehaviour
 {
     [SerializeField]
     private Texture2D cursor; //ƒJ[ƒ\ƒ‹
-    public GameObject bulletPrefab;//”½Ë‚·‚é’e
-    public GameObject bulletPrefab2;//’Ç”ö‚·‚é’e
+    public GameObject ReflectionBulletPrefab;//”½Ë‚·‚é’e
+    public GameObject ReflectionBulletPrefab2;//”½Ë‚·‚é’e
+    public GameObject TrackingBulletPrefab;//’Ç”ö‚·‚é’e
+    public GameObject TrackingBulletPrefab2;//’Ç”ö‚·‚é’e
     public float bulletSpeed = 10f;
     public float offsetDistance = 0.5f;//’e‚ªo‚éˆÊ’u‚Ìİ’è
 
@@ -78,7 +80,15 @@ public class Shot1 : StrixBehaviour
                     TimeTmp1 = time1;
                     Vector2 direction = (mousePosition - (transform.position + transform.up * offsetDistance)).normalized;
                     Vector2 velocity = direction.normalized * bulletSpeed; // ³‹K‰»Œã‚É‘¬‚³‚ğŠ|‚¯‚é
-                    GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.right * offsetDistance, Quaternion.identity);
+                    GameObject bullet;
+                    if (StrixNetwork.instance.playerName == "Player1")
+                    {
+                        bullet = Instantiate(ReflectionBulletPrefab, transform.position + transform.right * offsetDistance, Quaternion.identity);
+                    }
+                    else
+                    {
+                        bullet = Instantiate(ReflectionBulletPrefab2, transform.position + transform.right * offsetDistance, Quaternion.identity);
+                    }
                     bullet.GetComponent<Rigidbody2D>().velocity = velocity; // ‘¬“xƒxƒNƒgƒ‹‚ğİ’è
                 }
             }
@@ -94,7 +104,15 @@ public class Shot1 : StrixBehaviour
                     TimeTmp2 = time2;
                     Vector2 direction = (mousePosition - (transform.position + transform.up * offsetDistance)).normalized;
                     Vector2 velocity = direction.normalized * bulletSpeed; // ³‹K‰»Œã‚É‘¬‚³‚ğŠ|‚¯‚é
-                    GameObject bullet = Instantiate(bulletPrefab2, transform.position + transform.right * offsetDistance, Quaternion.identity);
+                    GameObject bullet;
+                    if (StrixNetwork.instance.playerName == "Player1")
+                    {
+                        bullet = Instantiate(TrackingBulletPrefab, transform.position + transform.right * offsetDistance, Quaternion.identity);
+                    }
+                    else
+                    {
+                        bullet = Instantiate(TrackingBulletPrefab2, transform.position + transform.right * offsetDistance, Quaternion.identity);
+                    }
                     bullet.GetComponent<Rigidbody2D>().velocity = velocity; // ‘¬“xƒxƒNƒgƒ‹‚ğİ’è
                 }
             }
