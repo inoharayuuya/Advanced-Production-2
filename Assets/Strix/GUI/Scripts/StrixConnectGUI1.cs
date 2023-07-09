@@ -25,6 +25,7 @@ public class StrixConnectGUI1 : MonoBehaviour {
         LogManager.Instance.Filter = logLevel;
 
         StrixNetwork.instance.applicationId = applicationId;
+        StrixNetwork.instance.playerName = "Player1";
         StrixNetwork.instance.ConnectMasterServer(host, port, OnConnectCallback, OnConnectFailedCallback);
 
         //statusText.text = "Connecting MasterServer " + host + ":" + port;
