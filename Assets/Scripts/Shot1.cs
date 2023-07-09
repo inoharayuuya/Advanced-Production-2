@@ -70,7 +70,7 @@ public class Shot1 : StrixBehaviour
             }
             if (Input.GetMouseButtonDown(0))
             {
-                if (flg1 == false)
+                if (flg1 == false && StrixNetwork.instance.playerName == "Player1")
                 {
                     // SEを鳴らす
                     ReflectionSE.Play();
@@ -80,22 +80,27 @@ public class Shot1 : StrixBehaviour
                     TimeTmp1 = time1;
                     Vector2 direction = (mousePosition - (transform.position + transform.up * offsetDistance)).normalized;
                     Vector2 velocity = direction.normalized * bulletSpeed; // 正規化後に速さを掛ける
-                    GameObject bullet;
-                    if (StrixNetwork.instance.playerName == "Player1")
-                    {
-                        bullet = Instantiate(ReflectionBulletPrefab, transform.position + transform.right * offsetDistance, Quaternion.identity);
-                        bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
-                    }
-                    if (StrixNetwork.instance.playerName == "Player2")
-                    {
-                        bullet = Instantiate(ReflectionBulletPrefab2, transform.position + transform.right * offsetDistance, Quaternion.identity);
-                        bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
-                    }
+                    GameObject bullet = Instantiate(ReflectionBulletPrefab, transform.position + transform.right * offsetDistance, Quaternion.identity);
+                    bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
+                }
+
+                if (flg1 == false && StrixNetwork.instance.playerName == "Player2")
+                {
+                    // SEを鳴らす
+                    ReflectionSE.Play();
+
+                    flg1 = true;
+
+                    TimeTmp1 = time1;
+                    Vector2 direction = (mousePosition - (transform.position + transform.up * offsetDistance)).normalized;
+                    Vector2 velocity = direction.normalized * bulletSpeed; // 正規化後に速さを掛ける
+                    GameObject bullet = Instantiate(ReflectionBulletPrefab2, transform.position + transform.right * offsetDistance, Quaternion.identity);
+                    bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
                 }
             }
             if (Input.GetMouseButtonDown(1))
             {
-                if (flg2 == false)
+                if (flg2 == false && StrixNetwork.instance.playerName == "Player1")
                 {
                     // SEを鳴らす
                     ArrowSE.Play();
@@ -105,17 +110,22 @@ public class Shot1 : StrixBehaviour
                     TimeTmp2 = time2;
                     Vector2 direction = (mousePosition - (transform.position + transform.up * offsetDistance)).normalized;
                     Vector2 velocity = direction.normalized * bulletSpeed; // 正規化後に速さを掛ける
-                    GameObject bullet;
-                    if (StrixNetwork.instance.playerName == "Player1")
-                    {
-                        bullet = Instantiate(TrackingBulletPrefab, transform.position + transform.right * offsetDistance, Quaternion.identity);
-                        bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
-                    }
-                    if (StrixNetwork.instance.playerName == "Player2")
-                    {
-                        bullet = Instantiate(TrackingBulletPrefab2, transform.position + transform.right * offsetDistance, Quaternion.identity);
-                        bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
-                    }
+                    GameObject bullet = Instantiate(TrackingBulletPrefab, transform.position + transform.right * offsetDistance, Quaternion.identity);
+                    bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
+                }
+
+                if (flg2 == false && StrixNetwork.instance.playerName == "Player2")
+                {
+                    // SEを鳴らす
+                    ArrowSE.Play();
+
+                    flg2 = true;
+
+                    TimeTmp2 = time2;
+                    Vector2 direction = (mousePosition - (transform.position + transform.up * offsetDistance)).normalized;
+                    Vector2 velocity = direction.normalized * bulletSpeed; // 正規化後に速さを掛ける
+                    GameObject bullet = Instantiate(TrackingBulletPrefab2, transform.position + transform.right * offsetDistance, Quaternion.identity);
+                    bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
                 }
             }
             if (DateTime.Now > TimeTmp1)
