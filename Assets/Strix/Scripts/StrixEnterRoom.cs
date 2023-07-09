@@ -36,10 +36,8 @@ public class StrixEnterRoom : MonoBehaviour {
 
     public void EnterRoom() {
         StrixNetwork.instance.JoinRandomRoom(StrixNetwork.instance.playerName, args => {
-            StrixNetwork.instance.playerName = "Player2";
             onRoomEntered.Invoke();
         }, args => {
-            StrixNetwork.instance.playerName = "Player1";
             CreateRoom();
         });
     }
