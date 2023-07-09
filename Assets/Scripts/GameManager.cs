@@ -62,6 +62,13 @@ public class GameManager : MonoBehaviour
 
             SceneManager.LoadScene("StrixSettingsScene");
         }
+
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            StrixNetwork.instance.roomSession.Disconnect();
+            
+            SceneManager.LoadScene("StrixSettingsScene");
+        }
     }
     #endregion
 }
