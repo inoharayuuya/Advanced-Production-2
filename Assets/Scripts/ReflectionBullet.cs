@@ -67,19 +67,19 @@ public class ReflectionBullet : StrixBehaviour
         }
         if (collision.gameObject.CompareTag("Player"))
         {
-            if(StrixNetwork.instance.playerName == "Player1")
-            {
-                print("プレイヤー1に衝突");
-                if (player.g_p1_hp > 0)
-                {
-                    // SEを鳴らす
-                    DamageSE.Play();
+            //if(StrixNetwork.instance.playerName == "Player1")
+            //{
+            //    print("プレイヤー1に衝突");
+            //    if (player.g_p1_hp > 0)
+            //    {
+            //        // SEを鳴らす
+            //        DamageSE.Play();
 
-                    player.g_p1_hp -= player.p2_attack;
-                }
-                Debug.Log(player.g_p1_hp);
-                Destroy(bullet);
-            }
+            //        player.g_p1_hp -= player.p2_attack;
+            //    }
+            //    Debug.Log(player.g_p1_hp);
+            //    Destroy(bullet);
+            //}
             if (StrixNetwork.instance.playerName == "Player2")
             {
                 print("プレイヤー2に衝突");
