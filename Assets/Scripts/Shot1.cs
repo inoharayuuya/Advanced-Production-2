@@ -70,7 +70,10 @@ public class Shot1 : StrixBehaviour
             }
             if (Input.GetMouseButtonDown(0))
             {
-                if (flg1 == false && StrixNetwork.instance.playerName == "Player1")
+                var a = transform.parent.gameObject.name;
+                print("aaa;" + a);
+                if (flg1 == false && a == "Player1")
+                    //if (flg1 == false && StrixNetwork.instance.playerName == "Player1")
                 {
                     print("Player1が弾を発射した");
                     // SEを鳴らす
@@ -85,7 +88,7 @@ public class Shot1 : StrixBehaviour
                     bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
                 }
 
-                if (flg1 == false && StrixNetwork.instance.playerName == "Player2")
+                if (flg1 == false && a == "Player2")
                 {
                    print("Player2が弾を発射した");
                     // SEを鳴らす
