@@ -71,9 +71,9 @@ public class ReflectionBullet2 : MonoBehaviour
         {
             Destroy(bullet);
         }
-        if (name == "Player1")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            if (playerName == "Player1")
+            if (name == "Player1")
             {
                 print("ƒvƒŒƒCƒ„[1‚ÉÕ“Ë");
                 if (player.g_p1_hp > 0)
