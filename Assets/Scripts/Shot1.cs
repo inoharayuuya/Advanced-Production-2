@@ -70,11 +70,8 @@ public class Shot1 : StrixBehaviour
             }
             if (Input.GetMouseButtonDown(0))
             {
-                RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
                 if (flg1 == false && StrixNetwork.instance.playerName == "Player1")
                 {
-                    if (hit.collider.name == "Player1")
-                    {
                     print("Player1‚ª’e‚ğ”­Ë‚µ‚½");
                     // SE‚ğ–Â‚ç‚·
                     ReflectionSE.Play();
@@ -86,15 +83,11 @@ public class Shot1 : StrixBehaviour
                     Vector2 velocity = direction.normalized * bulletSpeed; // ³‹K‰»Œã‚É‘¬‚³‚ğŠ|‚¯‚é
                     GameObject bullet = Instantiate(ReflectionBulletPrefab, transform.position + transform.right * offsetDistance, Quaternion.identity);
                     bullet.GetComponent<Rigidbody2D>().velocity = velocity; // ‘¬“xƒxƒNƒgƒ‹‚ğİ’è
-                    }
-
                 }
 
                 if (flg1 == false && StrixNetwork.instance.playerName == "Player2")
                 {
-                    if (hit.collider.name == "Player2")
-                    {
-                        print("Player2‚ª’e‚ğ”­Ë‚µ‚½");
+                   print("Player2‚ª’e‚ğ”­Ë‚µ‚½");
                     // SE‚ğ–Â‚ç‚·
                     ReflectionSE.Play();
 
@@ -105,8 +98,6 @@ public class Shot1 : StrixBehaviour
                     Vector2 velocity = direction.normalized * bulletSpeed; // ³‹K‰»Œã‚É‘¬‚³‚ğŠ|‚¯‚é
                     GameObject bullet = Instantiate(ReflectionBulletPrefab2, transform.position + transform.right * offsetDistance, Quaternion.identity);
                     bullet.GetComponent<Rigidbody2D>().velocity = velocity; // ‘¬“xƒxƒNƒgƒ‹‚ğİ’è
-                    }
-
                 }
             }
             if (Input.GetMouseButtonDown(1))
