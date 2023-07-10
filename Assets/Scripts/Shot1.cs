@@ -31,12 +31,6 @@ public class Shot1 : StrixBehaviour
     [SerializeField] AudioSource ReflectionSE;
     [SerializeField] AudioSource ArrowSE;
 
-    public string GetVariable()
-    {
-        print("親オブジェクトをセットしました");
-        return parentObjects;
-    }
-
     private void Start()
     {
         Cursor.SetCursor(cursor, new Vector2(cursor.width / 2, cursor.height / 2), CursorMode.ForceSoftware);
@@ -78,7 +72,6 @@ public class Shot1 : StrixBehaviour
             }
             if (Input.GetMouseButtonDown(0))
             {
-                print("aaa;" + parentObjects);
                 if (flg1 == false && parentObjects == "Player1" && StrixNetwork.instance.playerName == "Player1")
                     //if (flg1 == false && StrixNetwork.instance.playerName == "Player1")
                 {

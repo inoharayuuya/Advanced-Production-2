@@ -57,7 +57,7 @@ public class ReflectionBullet2 : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        playerName = shot1.GetVariable();
+        var name = collision.gameObject.name;
         
         if (collision.gameObject.CompareTag("Wall"))
         {
@@ -71,7 +71,7 @@ public class ReflectionBullet2 : MonoBehaviour
         {
             Destroy(bullet);
         }
-        if (collision.gameObject.name == "Player1")
+        if (name == "Player1")
         {
             if (playerName == "Player1")
             {
