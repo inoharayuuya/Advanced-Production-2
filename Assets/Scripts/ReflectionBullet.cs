@@ -53,6 +53,7 @@ public class ReflectionBullet : StrixBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        var a = transform.parent.gameObject.name;
         if (collision.gameObject.CompareTag("Wall"))
         {
             // SE‚ð–Â‚ç‚·
@@ -80,7 +81,7 @@ public class ReflectionBullet : StrixBehaviour
             //    Debug.Log(player.g_p1_hp);
             //    Destroy(bullet);
             //}
-            if (StrixNetwork.instance.playerName == "Player2")
+            if (a == "Player2")
             {
                 print("ƒvƒŒƒCƒ„[2‚ÉÕ“Ë");
                 if (player.g_p2_hp > 0)
