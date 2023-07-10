@@ -33,6 +33,7 @@ public class Shot1 : StrixBehaviour
 
     public string GetVariable()
     {
+        print("親オブジェクトをセットしました");
         return parentObjects;
     }
 
