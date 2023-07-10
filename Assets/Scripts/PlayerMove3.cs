@@ -20,7 +20,6 @@ public class PlayerMove3 : StrixBehaviour
     public float speed;
     public float jump;
     public float backspeed = 5;
-    public String parentObjects;
     // private bool fripX = true;
     #endregion
 
@@ -80,7 +79,6 @@ public class PlayerMove3 : StrixBehaviour
         playerClass = GameObject.Find("PlayerClass");
         playerhp = playerClass.GetComponent<PlayerClass>();
         shot = GetComponent<Shot1>();
-        parentObjects = transform.parent.gameObject.name;
     }
 
     // Update is called once per frame
