@@ -1,3 +1,4 @@
+using SoftGear.Strix.Unity.Runtime;
 using UnityEngine;
 
 public class ReflectionBullet2 : MonoBehaviour
@@ -66,15 +67,32 @@ public class ReflectionBullet2 : MonoBehaviour
         }
         if (collision.gameObject.name == "Player1")
         {
-            if(player.g_p1_hp > 0)
+            if (StrixNetwork.instance.playerName == "Player1")
             {
-                // SEを鳴らす
-                DamageSE.Play();
+                print("プレイヤー1に衝突");
+                if (player.g_p1_hp > 0)
+                {
+                    // SEを鳴らす
+                    DamageSE.Play();
 
-                player.g_p1_hp -= player.p2_attack;
+                    player.g_p1_hp -= player.p2_attack;
+                }
+                Debug.Log(player.g_p1_hp);
+                Destroy(bullet);
             }
-            Debug.Log(player.g_p1_hp);
-            Destroy(bullet);
+            //if (StrixNetwork.instance.playerName == "Player2")
+            //{
+            //    print("プレイヤー2に衝突");
+            //    if (player.g_p2_hp > 0)
+            //    {
+            //        // SEを鳴らす
+            //        DamageSE.Play();
+
+            //        player.g_p2_hp -= player.p1_attack;
+            //    }
+            //    Debug.Log(player.g_p2_hp);
+            //    Destroy(bullet);
+            //}
         }
     }
 }

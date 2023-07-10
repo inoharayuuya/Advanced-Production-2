@@ -1,15 +1,16 @@
+using SoftGear.Strix.Unity.Runtime;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HpBerController : MonoBehaviour
+public class HpBerController : StrixBehaviour
 {
     #region  プライベート
     // private
-    [SerializeField] Slider p1_slider;
-    [SerializeField] Slider p2_slider;
+    [StrixSyncField] public Slider p1_slider;
+    [StrixSyncField] public Slider p2_slider;
     //[SerializeField] DateTime time;
     GameObject playerClass;
     PlayerClass player;
@@ -21,7 +22,7 @@ public class HpBerController : MonoBehaviour
     // public
 
     #endregion
-
+    
     #region  Init関数
     /// <summary>
     /// 初期化の関数
@@ -32,8 +33,8 @@ public class HpBerController : MonoBehaviour
         player = playerClass.GetComponent<PlayerClass>();
 
         //// プレイヤー変数
-        //g_p1_hp = player.p1_hp;  // プレイヤー1hpの取得
-        //g_p2_hp = player.p2_hp;  // プレイヤー2hpの取得
+        //g_p1_hp = player1.p1_hp;  // プレイヤー1hpの取得
+        //g_p2_hp = player1.p2_hp;  // プレイヤー2hpの取得
 
         // カウントダウンに使うフラグ
         //flg = false;
@@ -77,7 +78,7 @@ public class HpBerController : MonoBehaviour
     //    //    TimeTmp = time;
 
     //    //    // プレイヤーのHPが残っている場合
-    //    //    if (player.p1_hp > 0 && player.p1_hp > 0)
+    //    //    if (player1.p1_hp > 0 && player1.p1_hp > 0)
     //    //    {
     //    //        p1_hp -= 10;
     //    //        p2_hp -= 10;

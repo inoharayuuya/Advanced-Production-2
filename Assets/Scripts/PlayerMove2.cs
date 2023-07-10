@@ -4,15 +4,17 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using SoftGear.Strix.Unity.Runtime;
+using UnityEngine.SceneManagement;
 
-public class PlayerMove : StrixBehaviour
+public class PlayerMove2 : StrixBehaviour
 {
     #region パブリック変数
 
     [SerializeField]
-    GameObject player; 
+    GameObject player2; 
     [SerializeField]
     Rigidbody2D rb;
+    [SerializeField] GameManager gameManager;
     public float speed;
     public float jump;
     public float backspeed = 5;
@@ -43,7 +45,7 @@ public class PlayerMove : StrixBehaviour
     PanelAndCountDownController panelController;
     GameObject playerClass;
     PlayerClass playerhp;
-    Shot shot;
+    Shot2 shot;
     #region 当たり判定 
     // テレポートで移動するとき一旦力を加えない
     void OnTriggerEnter2D(Collider2D other)
@@ -68,7 +70,7 @@ public class PlayerMove : StrixBehaviour
         panelController = Timer.GetComponent<PanelAndCountDownController>();
         playerClass = GameObject.Find("PlayerClass");
         playerhp = playerClass.GetComponent<PlayerClass>();
-        shot = GetComponent<Shot>();
+        shot = GetComponent<Shot2>();
     }
    
     // Update is called once per frame
@@ -79,15 +81,39 @@ public class PlayerMove : StrixBehaviour
         {
             Playermove();
         }
+
+        if (gameManager.GameEndFlg)
+        {
+            if (playerhp.g_p1_hp <= 0)
+            {
+                SceneManager.LoadScene("WinScene");
+            }
+
+            if (playerhp.g_p2_hp <= 0)
+            {
+                SceneManager.LoadScene("LoseScene");
+            }
+
+            SceneManager.LoadScene("StrixSettingsScene");
+        }
     }
 
     #region プレイヤーの操作
+    [StrixRpc]
     public void Playermove()
     {
-        if(isLocal == false)
+        if (StrixNetwork.instance.playerName != "Player2")
         {
+            //player2.SetActive(false);
+            print("プレイヤー2非表示");
             return;
         }
+
+        //if (isLocal == false)
+        //{
+        //    return;
+        //}
+
         // 現在時刻から0.5秒先を取得
         time1 = DateTime.Now.AddSeconds(1.0f);
         time2 = DateTime.Now.AddSeconds(2.0f);

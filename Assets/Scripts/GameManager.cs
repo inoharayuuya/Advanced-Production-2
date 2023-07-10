@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region  パブリック
-    bool GameEndFlg;
+    public bool GameEndFlg;
     #endregion
 
     #region  Init関数
@@ -60,7 +60,14 @@ public class GameManager : MonoBehaviour
         {
             StrixNetwork.instance.roomSession.Disconnect();
 
-            SceneManager.LoadScene("TitleScene");
+            SceneManager.LoadScene("StrixSettingsScene");
+        }
+
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            StrixNetwork.instance.roomSession.Disconnect();
+            
+            SceneManager.LoadScene("StrixSettingsScene");
         }
     }
     #endregion

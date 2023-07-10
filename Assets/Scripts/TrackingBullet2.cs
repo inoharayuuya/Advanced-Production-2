@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SoftGear.Strix.Unity.Runtime;
 
-public class TrackingBullet2 : MonoBehaviour
+public class TrackingBullet2 : StrixBehaviour
 {
     GameObject playerClass;
     PlayerClass player;
@@ -43,6 +44,7 @@ public class TrackingBullet2 : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         bulletTrans.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
+    [StrixRpc]
     private void OnCollisionEnter2D(Collision2D collision)
     {
 

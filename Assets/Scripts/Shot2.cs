@@ -1,7 +1,8 @@
+using SoftGear.Strix.Unity.Runtime;
 using System;
 using UnityEngine;
 
-public class Shot : MonoBehaviour
+public class Shot2 : StrixBehaviour
 {
     [SerializeField]
     private Texture2D cursor; //ÉJÅ[É\Éã
@@ -38,14 +39,20 @@ public class Shot : MonoBehaviour
     }
     void Update()
     {
-        if(Dead == false)
+        if(Dead == false && StrixNetwork.instance.selfRoomMember.GetName() == "Player2")
         {
           Shots();
         }
 
     }
+    [StrixRpc]
     public void Shots()
     {
+        if (StrixNetwork.instance.playerName != "Player2")
+        {
+            return;
+        }
+
         // åªç›éûçèÇ©ÇÁ0.5ïbêÊÇéÊìæ
         time1 = DateTime.Now.AddSeconds(1.0f);
         time2 = DateTime.Now.AddSeconds(2.0f);

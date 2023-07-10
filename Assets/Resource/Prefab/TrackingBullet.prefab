@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 43497390934195466}
   - component: {fileID: 43497390934195467}
   - component: {fileID: 7862673824762105795}
+  - component: {fileID: 6136586429969432733}
   m_Layer: 0
   m_Name: TrackingBullet
   m_TagString: Untagged
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 43497390934195468}
-  tirgetTrans: {fileID: 0}
+  tirgetTrans: {fileID: 5962224345258837245, guid: 4fdc813b51e31d34eb771c731b3cfcf5, type: 3}
   bulletSpeed: 20
   limitSpeed: 10
   delayTime: 0.5
@@ -163,3 +164,23 @@ PolygonCollider2D:
       - {x: 0.14925863, y: -0.009241608}
       - {x: 0.14925863, y: 0.0088624135}
       - {x: 0.052190065, y: 0.06517258}
+--- !u!114 &6136586429969432733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43497390934195468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1308000454, guid: f2c2112f638c5b8489d16403d930373b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strixBehaviours:
+  - {fileID: 43497390934195467}
+  objectType: 7
+  sendRate: 5
+  syncDestroy: 1
+  networkInstanceId: -1
+  InstantiableBy: 1
+  ConnectionClosedBehaviour: 1
