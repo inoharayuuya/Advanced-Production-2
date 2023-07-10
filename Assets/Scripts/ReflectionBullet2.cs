@@ -53,6 +53,7 @@ public class ReflectionBullet2 : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        var a = transform.parent.gameObject.name;
         if (collision.gameObject.CompareTag("Wall"))
         {
             // SE‚ð–Â‚ç‚·
@@ -67,7 +68,7 @@ public class ReflectionBullet2 : MonoBehaviour
         }
         if (collision.gameObject.name == "Player1")
         {
-            if (StrixNetwork.instance.playerName == "Player1")
+            if (a == "Player1")
             {
                 print("ƒvƒŒƒCƒ„[1‚ÉÕ“Ë");
                 if (player.g_p1_hp > 0)
