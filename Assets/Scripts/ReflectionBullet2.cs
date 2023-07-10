@@ -28,7 +28,6 @@ public class ReflectionBullet2 : MonoBehaviour
         playerClass = GameObject.Find("PlayerClass");
         player = playerClass.GetComponent<PlayerClass>();
         shot1 = shot.GetComponent<Shot1>();
-        playerName = shot1.GetVariable();
     }
     private void Update()
     {
@@ -58,6 +57,8 @@ public class ReflectionBullet2 : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        playerName = shot1.GetVariable();
+        
         if (collision.gameObject.CompareTag("Wall"))
         {
             // SE‚ð–Â‚ç‚·
