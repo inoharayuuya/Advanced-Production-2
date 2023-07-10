@@ -88,7 +88,7 @@ public class Shot1 : StrixBehaviour
                     bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
                 }
 
-                if (flg1 == false && a == "Player1(clone)" && StrixNetwork.instance.playerName == "Player2")
+                if (flg1 == false && a == "Player1" && StrixNetwork.instance.playerName == "Player2")
                 {
                    print("Player2が弾を発射した");
                     // SEを鳴らす
