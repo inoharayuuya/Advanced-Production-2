@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class ReflectionBullet : StrixBehaviour
 {
-    [SerializeField] GameObject playerMove;
-    PlayerMove3 playerMoveScript;
+    [SerializeField] GameObject shot;
+    Shot1 shot1;
     GameObject playerClass;
     PlayerClass player;
     [SerializeField]
@@ -13,6 +13,7 @@ public class ReflectionBullet : StrixBehaviour
     float elapsedTime = 0f; // 経過時間のカウント変数
     private Rigidbody2D rb;
     private Transform bulletTransform;
+    private string playerName;
 
     // 弾が壁に当たった時のSE
     [SerializeField] AudioSource BulletReflectionSE;
@@ -26,7 +27,8 @@ public class ReflectionBullet : StrixBehaviour
         bulletTransform = transform;
         playerClass = GameObject.Find("PlayerClass");
         player = playerClass.GetComponent<PlayerClass>();
-        playerMoveScript = playerMove.GetComponent<PlayerMove3>();
+        shot1 = shot.GetComponent<Shot1>();
+        playerName = shot1.GetVariable();
     }
     private void Update()
     { 
@@ -83,7 +85,7 @@ public class ReflectionBullet : StrixBehaviour
             //    Debug.Log(player.g_p1_hp);
             //    Destroy(bullet);
             //}
-            if (playerMoveScript.parentObjects == "Player1(clone)")
+            if (playerName == "Player1(clone)")
             {
                 print("プレイヤー2に衝突");
                 if (player.g_p2_hp > 0)

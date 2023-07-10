@@ -25,10 +25,16 @@ public class Shot1 : StrixBehaviour
     PanelAndCountDownController panelController;
     GameObject playerClass;
     PlayerClass playerhp;
+    public String parentObjects;
 
     // SE
     [SerializeField] AudioSource ReflectionSE;
     [SerializeField] AudioSource ArrowSE;
+
+    public string GetVariable()
+    {
+        return parentObjects;
+    }
 
     private void Start()
     {
@@ -38,6 +44,7 @@ public class Shot1 : StrixBehaviour
         playerClass = GameObject.Find("PlayerClass");
         playerhp = playerClass.GetComponent<PlayerClass>();
         Dead= false;
+        parentObjects = transform.parent.gameObject.name;
     }
     void Update()
     {
@@ -70,9 +77,8 @@ public class Shot1 : StrixBehaviour
             }
             if (Input.GetMouseButtonDown(0))
             {
-                var a = transform.parent.gameObject.name;
-                print("aaa;" + a);
-                if (flg1 == false && a == "Player1" && StrixNetwork.instance.playerName == "Player1")
+                print("aaa;" + parentObjects);
+                if (flg1 == false && parentObjects == "Player1" && StrixNetwork.instance.playerName == "Player1")
                     //if (flg1 == false && StrixNetwork.instance.playerName == "Player1")
                 {
                     print("Player1が弾を発射した");
@@ -88,7 +94,7 @@ public class Shot1 : StrixBehaviour
                     bullet.GetComponent<Rigidbody2D>().velocity = velocity; // 速度ベクトルを設定
                 }
 
-                if (flg1 == false && a == "Player1" && StrixNetwork.instance.playerName == "Player2")
+                if (flg1 == false && parentObjects == "Player1" && StrixNetwork.instance.playerName == "Player2")
                 {
                    print("Player2が弾を発射した");
                     // SEを鳴らす

@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bed334d0217e444fb871d35bf4aa7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMove: {fileID: 3689394667873388886, guid: 82e41dda1da735a4eb04cf21dbe56612, type: 3}
+  shot: {fileID: 3689394667873388886, guid: 82e41dda1da735a4eb04cf21dbe56612, type: 3}
   bullet: {fileID: 6592166725031044422}
   cnt: 0
   BulletReflectionSE: {fileID: -1590297626862806400}
