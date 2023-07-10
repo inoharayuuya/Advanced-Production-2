@@ -81,7 +81,7 @@ public class ReflectionBullet : StrixBehaviour
             //    Debug.Log(player.g_p1_hp);
             //    Destroy(bullet);
             //}
-            if (a == "Player2")
+            if (a == "Player1(clone)")
             {
                 print("ƒvƒŒƒCƒ„[2‚ÉÕ“Ë");
                 if (player.g_p2_hp > 0)
