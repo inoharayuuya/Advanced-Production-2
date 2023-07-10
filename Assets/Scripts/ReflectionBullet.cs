@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class ReflectionBullet : StrixBehaviour
 {
-    [SerializeField] GameObject shot;
-    Shot1 shot1;
     GameObject playerClass;
     PlayerClass player;
     [SerializeField]
@@ -27,7 +25,6 @@ public class ReflectionBullet : StrixBehaviour
         bulletTransform = transform;
         playerClass = GameObject.Find("PlayerClass");
         player = playerClass.GetComponent<PlayerClass>();
-        shot1 = shot.GetComponent<Shot1>();
     }
     private void Update()
     { 
@@ -57,7 +54,7 @@ public class ReflectionBullet : StrixBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        playerName = shot1.GetVariable();
+        var name = collision.gameObject.name;
 
         if (collision.gameObject.CompareTag("Wall"))
         {
@@ -86,7 +83,9 @@ public class ReflectionBullet : StrixBehaviour
             //    Debug.Log(player.g_p1_hp);
             //    Destroy(bullet);
             //}
-            if (playerName == "Player1(clone)")
+            print("playerName" + playerName);
+
+            if (name == "Player1(Clone)")
             {
                 print("ƒvƒŒƒCƒ„[2‚ÉÕ“Ë");
                 if (player.g_p2_hp > 0)
