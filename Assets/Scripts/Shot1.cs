@@ -105,20 +105,20 @@ public class Shot1 : StrixBehaviour
             }
             if (Input.GetMouseButtonDown(1))
             {
-                if (flg2 == false && StrixNetwork.instance.playerName == "Player1")
-                {
-                    print("Player1‚ª’e‚ğ”­Ë‚µ‚½");
-                    // SE‚ğ–Â‚ç‚·
-                    ArrowSE.Play();
+                //if (flg2 == false && StrixNetwork.instance.playerName == "Player1")
+                //{
+                //    print("Player1‚ª’e‚ğ”­Ë‚µ‚½");
+                //    // SE‚ğ–Â‚ç‚·
+                //    ArrowSE.Play();
 
-                    flg2 = true;
+                //    flg2 = true;
 
-                    TimeTmp2 = time2;
-                    Vector2 direction = (mousePosition - (transform.position + transform.up * offsetDistance)).normalized;
-                    Vector2 velocity = direction.normalized * bulletSpeed; // ³‹K‰»Œã‚É‘¬‚³‚ğŠ|‚¯‚é
-                    GameObject bullet = Instantiate(TrackingBulletPrefab, transform.position + transform.right * offsetDistance, Quaternion.identity);
-                    bullet.GetComponent<Rigidbody2D>().velocity = velocity; // ‘¬“xƒxƒNƒgƒ‹‚ğİ’è
-                }
+                //    TimeTmp2 = time2;
+                //    Vector2 direction = (mousePosition - (transform.position + transform.up * offsetDistance)).normalized;
+                //    Vector2 velocity = direction.normalized * bulletSpeed; // ³‹K‰»Œã‚É‘¬‚³‚ğŠ|‚¯‚é
+                //    GameObject bullet = Instantiate(TrackingBulletPrefab, transform.position + transform.right * offsetDistance, Quaternion.identity);
+                //    bullet.GetComponent<Rigidbody2D>().velocity = velocity; // ‘¬“xƒxƒNƒgƒ‹‚ğİ’è
+                //}
 
                 //if (flg2 == false && StrixNetwork.instance.playerName == "Player2")
                 //{

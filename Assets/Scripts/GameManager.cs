@@ -69,16 +69,6 @@ public class GameManager : MonoBehaviour
             
             SceneManager.LoadScene("StrixSettingsScene");
         }
-
-        if(StrixNetwork.instance.playerName == "Player1")
-        {
-            print("プレイヤー1のHP" + player.g_p1_hp);
-        }
-
-        if (StrixNetwork.instance.playerName == "Player2")
-        {
-            print("プレイヤー2のHP" + player.g_p2_hp);
-        }
     }
     #endregion
 }
