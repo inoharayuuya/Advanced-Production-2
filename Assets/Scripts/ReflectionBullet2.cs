@@ -55,6 +55,11 @@ public class ReflectionBullet2 : MonoBehaviour
 
     }
 
+    private void DestroyBullet()
+    {
+        Destroy(bullet);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         var name = collision.gameObject.name;
@@ -84,7 +89,8 @@ public class ReflectionBullet2 : MonoBehaviour
                     player.g_p1_hp -= player.p2_attack;
                 }
                 Debug.Log(player.g_p1_hp);
-                Destroy(bullet);
+                //Invoke("DestroyBullet", 0.25f);
+                Destroy(gameObject);
             }
             //if (StrixNetwork.instance.playerName == "Player2")
             //{

@@ -9,12 +9,12 @@ public class DamaeFloor : StrixBehaviour
     PlayerClass player;
 
     // ダメージ床に触れているときにHPを減らす
-    void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             // プレイヤー１が触れているとき
-            if (StrixNetwork.instance.playerName == "Player1")
+            if (collision.gameObject.name == "Player1")
             {
                 Debug.Log("プレイヤー１、ダメージ床に触れました");
                 player.g_p1_hp -= 10;
@@ -23,7 +23,7 @@ public class DamaeFloor : StrixBehaviour
             }
             
             // プレイヤー２が触れているとき
-            if (StrixNetwork.instance.playerName == "Player2")
+            if (collision.gameObject.name == "Player1(Clone)")
             {
                 Debug.Log("プレイヤー２、ダメージ床に触れました");
                 player.g_p2_hp -= 10;

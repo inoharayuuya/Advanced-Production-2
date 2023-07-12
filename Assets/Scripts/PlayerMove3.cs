@@ -240,7 +240,7 @@ public class PlayerMove3 : StrixBehaviour
                     flg2 = false;
                 }
             }
-            if (playerhp.g_p1_hp == 0 || playerhp.g_p2_hp == 0)
+            if (playerhp.g_p1_hp == 0)
             {
                 Dead = true;
                 Walk = false;

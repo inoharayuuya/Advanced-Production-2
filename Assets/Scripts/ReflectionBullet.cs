@@ -12,6 +12,8 @@ public class ReflectionBullet : StrixBehaviour
     private Rigidbody2D rb;
     private Transform bulletTransform;
     private string playerName;
+    SpriteRenderer spriteRenderer;
+    Collider2D collider;
 
     // ’e‚ª•Ç‚É“–‚½‚Á‚½Žž‚ÌSE
     [SerializeField] AudioSource BulletReflectionSE;
@@ -25,6 +27,8 @@ public class ReflectionBullet : StrixBehaviour
         bulletTransform = transform;
         playerClass = GameObject.Find("PlayerClass");
         player = playerClass.GetComponent<PlayerClass>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        collider = GetComponent<Collider2D>();
     }
     private void Update()
     { 
@@ -50,6 +54,11 @@ public class ReflectionBullet : StrixBehaviour
                 break;
         }
 
+    }
+
+    private void DestroyBullet()
+    {
+        Destroy(bullet);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -96,7 +105,12 @@ public class ReflectionBullet : StrixBehaviour
                     player.g_p2_hp -= player.p1_attack;
                 }
                 Debug.Log(player.g_p2_hp);
+                //Invoke("DestroyBullet", 0.25f);
                 Destroy(bullet);
+                //var color = spriteRenderer.color;
+                //color.a = 0;
+                //spriteRenderer.color = color;
+                //collider.isTrigger = true;
             }
         }
     }
