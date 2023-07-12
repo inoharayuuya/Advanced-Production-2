@@ -34,10 +34,10 @@ public class T_MouseClick2 : MonoBehaviour
         }
     }
 
-    public void MouseClick2()
-    {
-        SceneManager.LoadScene("StrixSettingsScene");
-    }
+    //public void MouseClick2()
+    //{
+    //    SceneManager.LoadScene("StrixSettingsScene");
+    //}
     #endregion
 
     private void Start()

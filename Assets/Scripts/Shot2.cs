@@ -2,7 +2,7 @@ using SoftGear.Strix.Unity.Runtime;
 using System;
 using UnityEngine;
 
-public class Shot2 : MonoBehaviour
+public class Shot2 : StrixBehaviour
 {
     [SerializeField]
     private Texture2D cursor; //ÉJÅ[É\Éã
@@ -39,12 +39,13 @@ public class Shot2 : MonoBehaviour
     }
     void Update()
     {
-        if(Dead == false)
+        if(Dead == false && StrixNetwork.instance.selfRoomMember.GetName() == "Player2")
         {
           Shots();
         }
 
     }
+    [StrixRpc]
     public void Shots()
     {
         if (StrixNetwork.instance.playerName != "Player2")

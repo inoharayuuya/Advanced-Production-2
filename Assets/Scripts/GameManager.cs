@@ -32,6 +32,16 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    void LoadWinScene()
+    {
+        SceneManager.LoadScene("WinScene");
+    }
+
+    void LoadLoseScene()
+    {
+        SceneManager.LoadScene("LoseScene");
+    }
+
     #region  スタート関数
     // Start is called before the first frame update
     void Start()
@@ -44,8 +54,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // タイマーが0になるか、プレイヤー1,2のHPが0になったら終了
-        if(panelController.CountTimer == 0.0F || player.g_p1_hp <= 0 || player.g_p2_hp <= 0)
+        // タイマーが0になったら終了
+        if(panelController.CountTimer == 0.0F)
         {
             GameEndFlg = true;
         }
@@ -56,10 +66,27 @@ public class GameManager : MonoBehaviour
             Debug.Log("終了");
         }
 
-        if(panelController.GameSetFlg == true)
+        if(player.g_p1_hp <= 0)
+        {
+            Invoke("LoadLoseScene", 0.25f);
+        }
+
+        if(player.g_p2_hp <= 0)
+        {
+            Invoke("LoadWinScene", 0.25f);
+        }
+
+        if (panelController.GameSetFlg == true)
         {
             StrixNetwork.instance.roomSession.Disconnect();
 
+            SceneManager.LoadScene("StrixSettingsScene");
+        }
+
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            StrixNetwork.instance.roomSession.Disconnect();
+            
             SceneManager.LoadScene("StrixSettingsScene");
         }
     }

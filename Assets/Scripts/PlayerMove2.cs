@@ -99,15 +99,16 @@ public class PlayerMove2 : StrixBehaviour
     }
 
     #region プレイヤーの操作
+    [StrixRpc]
     public void Playermove()
     {
         if (StrixNetwork.instance.playerName != "Player2")
         {
-            player2.SetActive(false);
+            //player2.SetActive(false);
             print("プレイヤー2非表示");
             return;
         }
-        
+
         //if (isLocal == false)
         //{
         //    return;

@@ -4,8 +4,10 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using TMPro;
+using SoftGear.Strix.Unity.Runtime;
+using UnityEngine.SceneManagement;
 
-public class PanelAndCountDownController : MonoBehaviour
+public class PanelAndCountDownController : StrixBehaviour
 {
     #region  プライベート
     [SerializeField] GameObject CountPanel;
@@ -21,6 +23,7 @@ public class PanelAndCountDownController : MonoBehaviour
     public TextMeshProUGUI TextCountDown;  // 表示用テキストUI
     public Text TextTimer;                 // 表示用テキストUI
     public bool GameSetFlg;
+    private bool gameStratFlg;
     #endregion
 
     #region  Init関数
@@ -36,6 +39,7 @@ public class PanelAndCountDownController : MonoBehaviour
         TextTimer.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         TextTimer.text = String.Format("{0:0}", CountTimer);
         GameSetFlg = false;
+        gameStratFlg = false;
     }
     #endregion
 
@@ -134,7 +138,22 @@ public class PanelAndCountDownController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CountDownTimer();
+        if (StrixNetwork.instance.room.GetMemberCount() == 2)
+        {
+            gameStratFlg = true;
+            CountDownTimer();
+        }
+        else if (StrixNetwork.instance.room.GetMemberCount() == 1)
+        {
+            if (gameStratFlg)
+            {
+                SceneManager.LoadScene("WinScene");
+            }
+            else
+            {
+                TextCountDown.text = String.Format("PLEASE WAITING");
+            }
+        }
     }
     #endregion
 }

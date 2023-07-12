@@ -1,6 +1,7 @@
+using SoftGear.Strix.Unity.Runtime;
 using UnityEngine;
 
-public class ReflectionBullet : MonoBehaviour
+public class ReflectionBullet : StrixBehaviour
 {
     GameObject playerClass;
     PlayerClass player;
@@ -10,6 +11,9 @@ public class ReflectionBullet : MonoBehaviour
     float elapsedTime = 0f; // 経過時間のカウント変数
     private Rigidbody2D rb;
     private Transform bulletTransform;
+    private string playerName;
+    SpriteRenderer spriteRenderer;
+    Collider2D collider;
 
     // 弾が壁に当たった時のSE
     [SerializeField] AudioSource BulletReflectionSE;
@@ -23,6 +27,8 @@ public class ReflectionBullet : MonoBehaviour
         bulletTransform = transform;
         playerClass = GameObject.Find("PlayerClass");
         player = playerClass.GetComponent<PlayerClass>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        collider = GetComponent<Collider2D>();
     }
     private void Update()
     { 
@@ -50,8 +56,15 @@ public class ReflectionBullet : MonoBehaviour
 
     }
 
+    private void DestroyBullet()
+    {
+        Destroy(bullet);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        var name = collision.gameObject.name;
+
         if (collision.gameObject.CompareTag("Wall"))
         {
             // SEを鳴らす
@@ -64,18 +77,41 @@ public class ReflectionBullet : MonoBehaviour
         {
             Destroy(bullet);
         }
-        if (collision.gameObject.name == "Player2")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            
-            if(player.g_p2_hp > 0)
-            {
-                // SEを鳴らす
-                DamageSE.Play();
+            //if(StrixNetwork.instance.playerName == "Player1")
+            //{
+            //    print("プレイヤー1に衝突");
+            //    if (player.g_p1_hp > 0)
+            //    {
+            //        // SEを鳴らす
+            //        DamageSE.Play();
 
-                player.g_p2_hp -= player.p1_attack;
+            //        player.g_p1_hp -= player.p2_attack;
+            //    }
+            //    Debug.Log(player.g_p1_hp);
+            //    Destroy(bullet);
+            //}
+            print("playerName" + playerName);
+
+            if (name == "Player1(Clone)")
+            {
+                print("プレイヤー2に衝突");
+                if (player.g_p2_hp > 0)
+                {
+                    // SEを鳴らす
+                    DamageSE.Play();
+
+                    player.g_p2_hp -= player.p1_attack;
+                }
+                Debug.Log(player.g_p2_hp);
+                //Invoke("DestroyBullet", 0.25f);
+                Destroy(bullet);
+                //var color = spriteRenderer.color;
+                //color.a = 0;
+                //spriteRenderer.color = color;
+                //collider.isTrigger = true;
             }
-            Debug.Log(player.g_p2_hp);
-            Destroy(bullet);
         }
     }
 }

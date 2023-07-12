@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4271383393320258400}
   - component: {fileID: 2292186648428780526}
   - component: {fileID: 8587538618011140435}
+  - component: {fileID: 4156419005910155774}
   m_Layer: 8
   m_Name: DamageFloor
   m_TagString: Wall
@@ -146,3 +147,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &4156419005910155774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3049291414806208617}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1308000454, guid: f2c2112f638c5b8489d16403d930373b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strixBehaviours:
+  - {fileID: 4271383393320258400}
+  objectType: 1
+  sendRate: 5
+  syncDestroy: 1
+  networkInstanceId: -1
+  InstantiableBy: 1
+  ConnectionClosedBehaviour: 1

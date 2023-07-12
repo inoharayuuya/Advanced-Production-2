@@ -122,8 +122,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursor: {fileID: 2800000, guid: ed9718bd52a110745aa78f157840a1db, type: 3}
-  bulletPrefab: {fileID: 6806464978076283539, guid: 9e49453d2cb5dc44e8a9ead7d4ef648b, type: 3}
-  bulletPrefab2: {fileID: 43497390934195468, guid: f216ad7235a3b6d4f994519a3f64e5e6, type: 3}
+  ReflectionBulletPrefab: {fileID: 6806464978076283539, guid: 9e49453d2cb5dc44e8a9ead7d4ef648b, type: 3}
+  ReflectionBulletPrefab2: {fileID: 6592166725031044422, guid: 650967d67cc53dd4987d1e62015d1402, type: 3}
+  TrackingBulletPrefab: {fileID: 43497390934195468, guid: f216ad7235a3b6d4f994519a3f64e5e6, type: 3}
+  TrackingBulletPrefab2: {fileID: 5567477816069533402, guid: 080d05cddd04d914ba936bfbbea3fa1d, type: 3}
   bulletSpeed: 10
   offsetDistance: 0
   ReflectionSE: {fileID: 747539708}
@@ -179,7 +181,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f063799e37312d047b95668c18c0891e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.514
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -275,7 +277,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 42cdb6fcb5b5cbc4b85680d816379888, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.508
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -366,20 +368,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3689394667113019573}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1308000454, guid: f2c2112f638c5b8489d16403d930373b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   strixBehaviours:
+  - {fileID: 3307508728184989088}
+  - {fileID: 4266744500157866639}
   - {fileID: 667852593125065633}
   - {fileID: 4023370977369626562}
-  objectType: 1048585
+  objectType: 1048583
   sendRate: 5
   syncDestroy: 1
   networkInstanceId: -1
-  InstantiableBy: 0
-  ConnectionClosedBehaviour: 0
+  InstantiableBy: 1
+  ConnectionClosedBehaviour: 1
 --- !u!114 &667852593125065633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +391,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3689394667113019573}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -1762331577, guid: f2c2112f638c5b8489d16403d930373b, type: 3}
   m_Name: 
@@ -406,7 +410,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3689394667113019573}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -357823647, guid: f2c2112f638c5b8489d16403d930373b, type: 3}
   m_Name: 
@@ -427,6 +431,8 @@ GameObject:
   - component: {fileID: 3689394667873388889}
   - component: {fileID: 240456944327789648}
   - component: {fileID: 3923354388435897893}
+  - component: {fileID: -1662755869825604013}
+  - component: {fileID: 4630336545894692787}
   - component: {fileID: 1501890134}
   - component: {fileID: 1501890127}
   - component: {fileID: 3193130257085998863}
@@ -535,7 +541,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3689394667873388886}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2ba62f8824ce7f45957be8bec8d5499, type: 3}
   m_Name: 
@@ -562,6 +568,46 @@ MonoBehaviour:
   player2: {fileID: 0}
   rb: {fileID: 0}
   gameManager: {fileID: 0}
+  speed: 0
+  jump: 0
+  backspeed: 5
+  Dead: 0
+--- !u!114 &-1662755869825604013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689394667873388886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2112c1b96c1908241b5c85a944a2635f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 3689394667873388886}
+  rb: {fileID: 3689394667873388889}
+  gameManager: {fileID: 7765442462287357660, guid: 925cbc9eb274bc4448ea8e24bec7767f, type: 3}
+  circle: {fileID: 3689394667113019573}
+  speed: 10
+  jump: 20
+  backspeed: 5
+  Dead: 0
+--- !u!114 &4630336545894692787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689394667873388886}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da2e2775114f3d4ba3bd043c7b7edad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player2: {fileID: 0}
+  rb: {fileID: 0}
+  gameManager: {fileID: 0}
+  circle: {fileID: 0}
   speed: 0
   jump: 0
   backspeed: 5
@@ -617,10 +663,12 @@ MonoBehaviour:
   strixBehaviours:
   - {fileID: 240456944327789648}
   - {fileID: 3923354388435897893}
+  - {fileID: -1662755869825604013}
+  - {fileID: 4630336545894692787}
   - {fileID: 3090978066370296417}
   - {fileID: 1747444567157499467}
-  objectType: 13
-  sendRate: 5
+  objectType: 8
+  sendRate: 20
   syncDestroy: 1
   networkInstanceId: -1
   InstantiableBy: 1

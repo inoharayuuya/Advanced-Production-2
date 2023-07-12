@@ -14,6 +14,7 @@ public class StrixConnectGUI1 : MonoBehaviour {
     //public Text statusText;
     //public Button connectButton;
     public UnityEvent OnConnect;
+    [SerializeField] private string name;
 
     void OnEnable()
     {
@@ -25,7 +26,7 @@ public class StrixConnectGUI1 : MonoBehaviour {
         LogManager.Instance.Filter = logLevel;
 
         StrixNetwork.instance.applicationId = applicationId;
-        StrixNetwork.instance.playerName = "Player1";
+        StrixNetwork.instance.playerName = name;
         StrixNetwork.instance.ConnectMasterServer(host, port, OnConnectCallback, OnConnectFailedCallback);
 
         //statusText.text = "Connecting MasterServer " + host + ":" + port;
@@ -39,7 +40,7 @@ public class StrixConnectGUI1 : MonoBehaviour {
 
         OnConnect.Invoke();
 
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
     private void OnConnectFailedCallback(StrixNetworkConnectFailedEventArgs args) {
